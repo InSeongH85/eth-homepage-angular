@@ -1,0 +1,154 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "common": {
+      "projectType": "library",
+      "root": "projects/common",
+      "sourceRoot": "projects/common/src",
+      "prefix": "eth",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/common/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/common/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/common/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/common/src/test.ts",
+            "tsConfig": "projects/common/tsconfig.spec.json",
+            "karmaConfig": "projects/common/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/common/src/**/*.ts",
+              "projects/common/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "eth-homepage": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/sites/eth",
+      "sourceRoot": "projects/sites/eth/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/eth-homepage",
+            "index": "projects/sites/eth/src/index.html",
+            "browser": "projects/sites/eth/src/main.ts",
+            "polyfills": [
+              "projects/sites/eth/src/polyfills.ts",
+              "@angular/localize/init"
+            ],
+            "tsConfig": "projects/sites/eth/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./node_modules"
+              ]
+            },
+            "assets": [
+              "projects/sites/eth/src/favicon.ico",
+              "projects/sites/eth/src/assets"
+            ],
+            "styles": [
+              "projects/sites/eth/src/scss/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "4mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kB",
+                  "maximumError": "60kB"
+                }
+              ],
+                "fileReplacements": [
+                {
+                  "replace": "projects/sites/eth/src/environments/environment.ts",
+                  "with": "projects/sites/eth/src/environments/environment.prod.ts"
+                }
+              ],
+              "baseHref": "/",
+              "outputHashing": "all",
+              "serviceWorker": "projects/root/ngsw-config.json"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "eth-homepage:build:production"
+            },
+            "development": {
+              "buildTarget": "eth-homepage:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sites/eth/src/test.ts",
+            "polyfills": "projects/sites/eth/src/polyfills.ts",
+            "tsConfig": "projects/sites/eth/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/sites/eth/src/favicon.ico",
+              "projects/sites/eth/src/assets"
+            ],
+            "styles": [
+              "projects/sites/eth/src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "1eb5162b-4932-492e-8276-e06604600126"
+  }
+}
