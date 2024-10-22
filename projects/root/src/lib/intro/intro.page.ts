@@ -9,9 +9,7 @@ import { Router } from '@angular/router';
 export class IntroPage {
   constructor(
     private router: Router
-  ) {
-    console.log('IntroPage constructor');
-  }
+  ) { }
 
   linkTodos() {
     this.router.navigate(['todo/todos']);
