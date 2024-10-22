@@ -7,23 +7,31 @@ import { Settings } from 'luxon';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-import { ETH_DATE_FORMATS, EthDateAdapter, MAT_LUXON_DATE_ADAPTER_OPTIONS } from './eth-solars-adapter';
+import { ETH_DATE_FORMATS, EthDateAdapter, MAT_LUXON_DATE_ADAPTER_OPTIONS } from './eth-date-adapter';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { EthCommonModule } from '../../../common/src/public-api';
+import { RootRoutingModule } from './root-routing.module';
+import { TodosModule } from '../../../todo/src/public-api';
+import { IntroPage } from './intro/intro.page';
+import { LayoutComponent } from './layout/layout.component';
 
 Settings.defaultZone = 'Asia/Seoul';
 
 
 @NgModule({
   declarations: [
+    IntroPage,
+    LayoutComponent,
     RootComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule,
-    EthCommonModule
+    RootRoutingModule,
+    EthCommonModule,
+    TodosModule
   ],
   providers: [
     DecimalPipe,
