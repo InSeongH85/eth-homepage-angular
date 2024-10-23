@@ -11,7 +11,11 @@ export class IntroPage {
     private router: Router
   ) { }
 
-  linkTodos() {
+  moveTodos() {
     this.router.navigate(['todo/todos']);
+  }
+
+  moveMetamask() {
+    this.router.navigate(['metamask/intro']);
   }
 }

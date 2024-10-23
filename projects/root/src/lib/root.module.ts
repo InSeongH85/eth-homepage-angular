@@ -15,6 +15,7 @@ import { RootRoutingModule } from './root-routing.module';
 import { TodosModule } from '../../../todo/src/public-api';
 import { IntroPage } from './intro/intro.page';
 import { LayoutComponent } from './layout/layout.component';
+import { MetamaskModule } from '../../../metamask/src/public-api';
 
 Settings.defaultZone = 'Asia/Seoul';
 
@@ -31,7 +32,8 @@ Settings.defaultZone = 'Asia/Seoul';
     RouterModule,
     RootRoutingModule,
     EthCommonModule,
-    TodosModule
+    TodosModule,
+    MetamaskModule
   ],
   providers: [
     DecimalPipe,

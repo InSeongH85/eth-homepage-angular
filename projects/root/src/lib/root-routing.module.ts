@@ -9,7 +9,8 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: '', component: IntroPage },
-      { path: 'todo', loadChildren: () => import('../../../todo/src/public-api').then(m => m.TodosModule) }
+      { path: 'todo', loadChildren: () => import('../../../todo/src/public-api').then(m => m.TodosModule) },
+      { path: 'metamask', loadChildren: () => import('../../../metamask/src/public-api').then(m => m.MetamaskModule) }
     ]
   }
 ];
