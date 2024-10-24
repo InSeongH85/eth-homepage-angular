@@ -1,0 +1,7 @@
+@for (wallet of wallets; track wallet.accounts) {
+  <div class="wallet">
+    <div class="wallet__name">{{ wallet.label }}</div>
+    <div class="wallet__address">{{ wallet.accounts[0].address }}</div>
+    <div class="wallet__balance">{{ wallet.accounts[0].balance.ETH }}</div>
+  </div>
+}

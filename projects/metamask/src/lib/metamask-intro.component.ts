@@ -33,9 +33,8 @@ export class MetamaskIntroComponent implements OnInit {
   }
 
   getMetamaskWallets() {
-    this.metamaskService.getMetamaskWallets$(this.onBoard).then((wallets) => {
+    this.metamaskService.getMetamaskWallets$(this.onBoard).subscribe((wallets) => {
       this.wallets = wallets;
-      console.log(this.wallets);
       this.cdr.detectChanges();
     });
   }

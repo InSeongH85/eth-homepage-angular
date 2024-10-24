@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MetamaskWallet } from './metamask.model';
+import { from, Observable } from 'rxjs';
 
 @Injectable()
 export class MetamaskService {
@@ -7,11 +8,13 @@ export class MetamaskService {
 
   // const wallets = await this.onBoard.connectWallet();
   // console.log(wallets);
-  async getMetamaskWallets$(onBoard: any): Promise<MetamaskWallet[]> {
-    return await onBoard.connectWallet().then((wallets: MetamaskWallet[]) => {
+  getMetamaskWallets$(onBoard: any): Observable<MetamaskWallet[]> {
+    return from(onBoard.connectWallet().then((wallets: MetamaskWallet[]) => {
+      console.log(wallets);
         return wallets;
       }).catch((error: any) => {
         console.error(error);
-      });
+      }) as Promise<MetamaskWallet[]>
+    );
   }
 }
