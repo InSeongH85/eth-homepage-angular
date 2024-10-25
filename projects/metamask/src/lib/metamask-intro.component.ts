@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, signal, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import Onboard, { OnboardAPI } from '@web3-onboard/core'
 import injectedModule from '@web3-onboard/injected-wallets'
 import { ethers } from 'ethers'
@@ -29,7 +29,7 @@ export class MetamaskIntroComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    // TODO - Check installed metamask extension
   }
 
   getMetamaskWallets() {

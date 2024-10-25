@@ -14,6 +14,7 @@ export class MetamaskService {
         return wallets;
       }).catch((error: any) => {
         console.error(error);
+        return [];
       }) as Promise<MetamaskWallet[]>
     );
   }
