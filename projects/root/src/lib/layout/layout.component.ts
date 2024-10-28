@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, of, Subscription } from 'rxjs';
 import { CommonService, WindowInfo, WindowService } from '../../../../common/src/public-api';
 
 @Component({
@@ -27,7 +27,6 @@ export class LayoutComponent implements OnInit, OnDestroy {
     private windowService: WindowService) { }
 
   ngOnInit() {
-    console.log('layout init');
     this.windowInfoSubscription = this.windowService.getWindowInfo$().subscribe((info: WindowInfo) => {
       this.windowInfo = info;
       this.clientHeight = this.windowInfo.clientHeight;
@@ -45,6 +44,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
         this.isBottomFixed = true;
       else
         this.isBottomFixed = false;
+      this.title$ = of(this.commonService.getConfig('SITE_NAME', 'ABCD'));
       this.cdr.detectChanges();
     });
   }
