@@ -29,11 +29,7 @@ export class MetamaskIntroComponent implements OnInit {
   }
 
   ngOnInit(): void {
-<<<<<<< HEAD
     // TODO - Check installed metamask extension
-=======
-    console.log('metamask init');
->>>>>>> 4215f32 (add menus)
   }
 
   getMetamaskWallets() {
