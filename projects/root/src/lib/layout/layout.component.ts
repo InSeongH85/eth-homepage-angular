@@ -44,7 +44,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
         this.isBottomFixed = true;
       else
         this.isBottomFixed = false;
-      this.title$ = of(this.commonService.getConfig('SITE_NAME', 'ABCD'));
+      this.title$ = of(this.commonService.getConfig('SITE_NAME', 'ETH'));
       this.cdr.detectChanges();
     });
   }
