@@ -27,6 +27,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
     private windowService: WindowService) { }
 
   ngOnInit() {
+    console.log('layout init');
     this.windowInfoSubscription = this.windowService.getWindowInfo$().subscribe((info: WindowInfo) => {
       this.windowInfo = info;
       this.clientHeight = this.windowInfo.clientHeight;

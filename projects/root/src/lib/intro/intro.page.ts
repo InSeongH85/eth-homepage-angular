@@ -12,10 +12,10 @@ export class IntroPage {
   ) { }
 
   moveTodos() {
-    this.router.navigate(['todo/todos']);
+    this.router.navigate(['../todo/todos']);
   }
 
   moveMetamask() {
-    this.router.navigate(['metamask/intro']);
+    this.router.navigate(['../metamask/intro']);
   }
 }

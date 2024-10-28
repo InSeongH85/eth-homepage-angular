@@ -12,6 +12,6 @@ export class RootComponent {
   constructor(
     dateAdapter: DateAdapter<any>,
   ) {
-    dateAdapter.setLocale
+    dateAdapter.setLocale('ko');
   }
 }

@@ -1,0 +1,10 @@
+<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+  <span *ngFor="let mainMenu of accessibleMenus; let i = index;">
+    <button mat-button color="primary" class="menu-item" [matMenuTriggerFor]="menu.childMenu" (click)="openMenu(i)"
+    [ngClass]="activeGnb === i ? 'eth-active':''">
+      {{mainMenu.name}}
+    </button>
+    <eth-menu-item #menu [menus]="mainMenu.c8n" (closed)="closedMenu(i)"></eth-menu-item>
+  </span>
+</nav>
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
