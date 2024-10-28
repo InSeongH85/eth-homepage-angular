@@ -1,0 +1,128 @@
+$mat-primary: #3f51b5; //mat-color(mat-palette($mat-indigo));
+$mat-accent: #ff7100; //mat-color(mat-palette($mat-pink, A200));
+$mat-warn: #f14336; // mat-color(mat-palette($mat-red));
+
+
+html {
+  height: 100%;
+}
+
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  min-width: 1024px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.3em;
+  font-size: 13px;
+}
+
+.eth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  .eth-header-wrap {
+    position: relative;
+  }
+  .eth-content {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-grow: 1;
+    overflow: hidden;
+    > *:last-child {
+      flex-grow: 1;
+      height: 100%;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// flex layout
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*[flex-columns] {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  overflow: hidden;
+  > *[flex] {
+    flex-grow: 1;
+    overflow: auto;
+  }
+  > *:only-child {
+    flex-grow: 1;
+    overflow: auto;
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Autocomplete Panel List
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.mat-mdc-autocomplete-panel .mat-mdc-option {
+  height: 32px;
+  font-size: 13px;
+  line-height: 32px;
+  .mat-mdc-option-text {
+    > strong {
+      font-weight: 500;
+      padding: 0 3px;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:not(:first-child):before {
+        content: "/";
+        padding: 0 6px 0 0;
+        color: #aaa;
+      }
+    }
+    > span {
+      padding: 0 3px;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:not(:first-child):before {
+        content: "/";
+        padding: 0 6px 0 0;
+        color: #aaa;
+      }
+    }
+  }
+  &.mat-active {
+    background: rgba($mat-primary, 0.2);
+    color: darken($mat-primary, 10%);
+  }
+  &:not(.mat-active):hover {
+    background: rgba($mat-primary, 0.1);
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Inline Text Link for a Tag.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@mixin inline-text-link {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  word-break: break-all;
+  color: $mat-primary;
+  line-height: 16px;
+  &:hover {
+    color: darken($mat-primary, 10%);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    border: 4px solid transparent;
+    border-color: currentColor currentColor transparent transparent;
+  }
+}

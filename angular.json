@@ -116,6 +116,7 @@
               "projects/sites/eth/src/assets"
             ],
             "styles": [
+              "projects/root/src/scss/styles.scss",
               "projects/sites/eth/src/scss/styles.scss"
             ],
             "scripts": []
