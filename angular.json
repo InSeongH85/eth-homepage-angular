@@ -43,6 +43,86 @@
         }
       }
     },
+    "messages": {
+      "projectType": "library",
+      "root": "projects/messages",
+      "sourceRoot": "projects/messages/src",
+      "prefix": "eth",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/messages/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/messages/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/messages/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/messages/src/test.ts",
+            "tsConfig": "projects/messages/tsconfig.spec.json",
+            "karmaConfig": "projects/messages/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/messages/src/**/*.ts",
+              "projects/messages/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "metamask": {
+      "projectType": "library",
+      "root": "projects/metamask",
+      "sourceRoot": "projects/metamask/src",
+      "prefix": "eth",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/metamask/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/metamask/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/metamask/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/metamask/src/test.ts",
+            "tsConfig": "projects/metamask/tsconfig.spec.json",
+            "karmaConfig": "projects/metamask/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/metamask/src/**/*.ts",
+              "projects/metamask/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "todo": {
       "projectType": "library",
       "root": "projects/todo",

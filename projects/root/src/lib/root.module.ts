@@ -25,6 +25,7 @@ import { MenusComponent } from './layout/menus.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { LayoutService } from './layout/layout.service';
 import { MenuItemComponent } from './layout/menu-item.component';
+import { MessagesModule } from '../../../messages/src/lib/messages.module';
 
 Settings.defaultZone = 'Asia/Seoul';
 
@@ -46,6 +47,8 @@ Settings.defaultZone = 'Asia/Seoul';
     RootRoutingModule,
     EthCommonModule,
     TodosModule,
+    EthCommonModule,
+    MessagesModule,
     MetamaskModule,
     MatTabsModule,
     MatToolbarModule,

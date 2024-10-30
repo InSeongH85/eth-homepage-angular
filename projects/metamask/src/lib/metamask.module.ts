@@ -4,6 +4,7 @@ import { MetamaskRoutingModule } from './metamask-routing.module';
 import { MetamaskService } from './metamask.service';
 import { MetamaskAccountsComponent } from './metamask-accounts.component';
 import { CommonModule } from '@angular/common';
+import { MessagesModule } from '../../../messages/src/public-api';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { CommonModule } from '@angular/common';
   ],
   imports: [
     CommonModule,
+    MessagesModule,
     MetamaskRoutingModule,
   ],
   providers: [

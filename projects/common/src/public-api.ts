@@ -1,3 +1,8 @@
+/*
+ * Public API Surface of common
+ */
+import '@angular/localize/init';
+
 export * from './lib/common.service';
 export * from './lib/json.service';
 export * from './lib/window.service';

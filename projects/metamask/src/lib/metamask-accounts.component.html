@@ -1,5 +1,9 @@
 @for (wallet of wallets; track wallet.accounts) {
   <ul class="eth-infolist">
+    <li>
+      <label i18n>ICON</label>
+      <span><img [src]="wallet.icon"></span>
+    </li>
     <li class="eth-full-info">
       <label i18n>Label</label>
       <span [textContent]="wallet.label"></span>

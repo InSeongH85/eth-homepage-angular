@@ -264,3 +264,92 @@ ul.eth-infolist {
     border-color: currentColor currentColor transparent transparent;
   }
 }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// DIALOG
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.mat-mdc-dialog-container {
+  position: relative;
+  min-width: 240px;
+  margin: 0;
+  padding: 0 !important;
+  overflow: hidden !important;
+  > ng-component:only-child {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    > form {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      height: 100%;
+    }
+  }
+
+  h2[md-dialog-title] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0 12px;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 36px;
+    background: $mat-primary;
+    color: #fff;
+    &:active {
+      cursor: move;
+    }
+  }
+
+  .mat-mdc-dialog-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-grow: 1;
+    height: 100%;
+    max-height: calc(100vh - 36px - 48px);
+    margin: 36px 0 0 0;
+    padding: 0;
+    box-sizing: border-box;
+    > *[flex] {
+      flex-grow: 1;
+    }
+    > *:only-child {
+      flex-grow: 1;
+    }
+    > .eth-table:only-child {
+      flex-grow: 0;
+    }
+    > .eth-form-fields-wrap:only-child {
+      flex-grow: 0;
+    }
+    > .eth-form-fields-wrap:last-child {
+      padding-bottom: 12px;
+    }
+    &:first-child {
+      margin: 0;
+    }
+    &:last-child {
+      max-height: calc(100vh - 36px);
+    }
+  }
+}
+
+.eth-responsive-minimum .mat-mdc-dialog-container div[md-dialog-actions] {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 6px 10px;
+  > div {
+    position: static !important;
+  }
+  > div:first-child {
+    order: 1;
+  }
+  > div:last-child {
+    order: 2;
+  }
+}
