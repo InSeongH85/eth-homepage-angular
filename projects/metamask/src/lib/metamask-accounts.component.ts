@@ -1,8 +1,10 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, Input, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { MetamaskWallet } from './metamask.model';
 import { SDKProvider } from '@metamask/sdk';
 import { MetamaskService } from './metamask.service';
 import { MessageService } from '../../../messages/src/lib/message.service';
+import { ethers } from 'ethers';
+import { JsonRpcSigner } from 'ethers';
 
 @Component({
   selector: 'eth-metamask-accounts',
@@ -10,19 +12,34 @@ import { MessageService } from '../../../messages/src/lib/message.service';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MetamaskAccountsComponent {
+export class MetamaskAccountsComponent implements OnChanges {
   @Input() wallets: MetamaskWallet[] = [];
   // @Input() provider: SDKProvider | undefined;
   // accounts: string[] = [];
+  provider: SDKProvider | undefined;
+
 
   constructor(
     private cdr: ChangeDetectorRef,
     private metamaskService: MetamaskService,
     private messageService: MessageService
-  ) {
+  ) { }
 
-    // console.log('Accounts provider', this.provider);
-    // console.log('Accounts accounts', this.accounts);
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['wallets']) {
+      if (changes['wallets'].currentValue !== changes['wallets'].previousValue) {
+        this.wallets = changes['wallets'].currentValue;
+        if (this.wallets.length > 0) {
+          console.log(this.wallets[0]);
+          const ethersProvider = new ethers.BrowserProvider(this.wallets[0].provider, 'any');
+          ethersProvider.getSigner().then((signer: JsonRpcSigner) => {
+            console.log(signer);
+          });
+          // const ethersProvider = ethers.providers.Web3Provider(this.wallets[0].provider, 'any');
+        }
+        this.cdr.detectChanges();
+      }
+    }
   }
 
   // @HostListener('window:eip6963:announceProvider', ['$event'])

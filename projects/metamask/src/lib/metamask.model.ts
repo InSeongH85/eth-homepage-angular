@@ -69,7 +69,7 @@ export interface MetamaskWallet {
   icon: string;
   instance: any;
   label: string;
-  // provider: any; // 뭐지...?
+  provider: any; // 뭐지...?
   wagmiConnector: any;
 }
 

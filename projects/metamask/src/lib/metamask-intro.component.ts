@@ -1,8 +1,7 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnInit, signal, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ViewEncapsulation } from '@angular/core';
 import { MetaMaskSDK, SDKProvider } from '@metamask/sdk';
 import Onboard, { OnboardAPI } from '@web3-onboard/core'
 import injectedModule from '@web3-onboard/injected-wallets'
-import { ethers } from 'ethers'
 import { MetamaskWallet, ON_BOARD_CHAINS } from './metamask.model';
 import { MetamaskService } from './metamask.service';
 import { CommonService } from '../../../common/src/public-api';
