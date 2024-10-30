@@ -1,3 +1,3 @@
 metamask intro
 <button (click)="getMetamaskWallets()">getWallets</button>
-<eth-metamask-accounts [wallets]="wallets"></eth-metamask-accounts>
+<eth-metamask-accounts *ngIf="wallets().length > 0" [wallets]="wallets"></eth-metamask-accounts>

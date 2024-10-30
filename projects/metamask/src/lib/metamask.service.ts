@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { MetamaskWallet } from './metamask.model';
 import { from, Observable } from 'rxjs';
 import detectEthereumProvider from '@metamask/detect-provider';
+import { BrowserProvider } from 'ethers';
+import { BlockTag } from 'ethers';
 
 @Injectable()
 export class MetamaskService {
@@ -19,6 +21,23 @@ export class MetamaskService {
         console.error(error);
         return [];
       }) as Promise<MetamaskWallet[]>
+    );
+  }
+  /**
+   * using ethers
+   * getBalance of the Account
+   * @param ethersBrowserProvider
+   * @param address
+   * @param blockTag
+   * @returns
+   */
+  getBalanceOfAddress$(ethersBrowserProvider: BrowserProvider, address: string, blockTag?: BlockTag): Observable<bigint> {
+    return from(
+      ethersBrowserProvider.getBalance(address, blockTag).then((balance: bigint) => {
+        return balance;
+      }).catch((error: any) => {
+        console.error(error);
+      }) as Promise<bigint>
     );
   }
 

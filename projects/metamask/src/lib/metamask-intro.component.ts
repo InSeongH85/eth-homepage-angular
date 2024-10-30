@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, effect, signal, ViewEncapsulation, WritableSignal } from '@angular/core';
 import { MetaMaskSDK, SDKProvider } from '@metamask/sdk';
 import Onboard, { OnboardAPI } from '@web3-onboard/core'
 import injectedModule from '@web3-onboard/injected-wallets'
@@ -11,16 +11,16 @@ import { MessageService } from '../../../messages/src/public-api';
   selector: 'eth-metamask',
   templateUrl: './metamask-intro.component.html',
   styles: [`
-  mat-snack-bar-container {
-    background-color: #f44336;
-  }
+    mat-snack-bar-container {
+      background-color: #f44336;
+    }
   `],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None
 })
 export class MetamaskIntroComponent {
   onBoard: OnboardAPI;
-  wallets: MetamaskWallet[];
+  wallets: WritableSignal<MetamaskWallet[]> = signal<MetamaskWallet[]>([]);
 
   constructor(
     private cdr: ChangeDetectorRef,
@@ -34,13 +34,11 @@ export class MetamaskIntroComponent {
       wallets: [injected],
       chains: ON_BOARD_CHAINS
     });
-    this.wallets = [];
   }
 
   getMetamaskWallets() {
     this.metamaskService.getMetamaskWallets$(this.onBoard).subscribe((wallets) => {
-      this.wallets = wallets;
-      this.cdr.detectChanges();
+      this.wallets.set(wallets);
     });
   }
 }

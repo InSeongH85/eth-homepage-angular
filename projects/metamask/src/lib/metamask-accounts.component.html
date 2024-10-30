@@ -1,4 +1,4 @@
-@for (wallet of wallets; track wallet.accounts) {
+@for (wallet of wallets(); track wallet.accounts) {
   <ul class="eth-infolist">
     <li>
       <label i18n>ICON</label>
@@ -8,6 +8,16 @@
       <label i18n>Label</label>
       <span [textContent]="wallet.label"></span>
     </li>
+    @for (chain of wallet.chains; track $index) {
+      <li class="eth-half-info" *ngIf="chain.id">
+        <label i18n>Chain ID</label>
+        <span [textContent]="chain.id"></span>
+      </li>
+      <li class="eth-half-info" *ngIf="chain.namespace">
+        <label i18n>ChainNameSpace</label>
+        <span [textContent]="chain.namespace"></span>
+      </li>
+    }
     @for (account of wallet.accounts; track account.address) {
       <li class="eth-half-info" *ngIf="account.address">
         <label i18n>Address</label>
@@ -18,5 +28,6 @@
         <span [textContent]="account.balance.ETH"></span>
       </li>
     }
+
   </ul>
 }
