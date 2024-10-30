@@ -107,6 +107,143 @@ body {
   }
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Information List
+////////////////////////////////////////////////////////////////////////////////////////////////////
+$color-infolist-label: #666;
+$color-infolist-value: #fafafa;
+$color-infolist-value-hover: #f0f0f0;
+$color-infolist-value-text: #222;
+$color-infolist-value-active: $mat-primary;
+
+ul.eth-infolist {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1px 0 0 0;
+  box-sizing: border-box;
+  font-size: 13px;
+  li {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 25%;
+    list-style: none;
+    margin: 0 0 1px 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    > label {
+      width: 7.5em;
+      min-width: 7.5em;
+      margin: 0;
+      padding: 4px 6px;
+      box-sizing: border-box;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: right;
+      color: $color-infolist-label;
+      &:hover {
+        overflow: visible;
+        width: auto;
+      }
+      &.eth-active {
+        width: 6.9em;
+        min-width: 6.9em;
+        color: $color-infolist-value-active;
+        font-size: 13px;
+      }
+      &.eth-warn {
+        width: 6.9em;
+        min-width: 6.9em;
+        color: darken($mat-warn, 10%);
+        font-weight: 500;
+        font-size: 13px;
+      }
+    }
+    > span {
+      flex-grow: 1;
+      line-height: 16px;
+      padding: 4px 6px;
+      box-sizing: border-box;
+      word-break: break-all;
+      white-space: normal;
+      background: $color-infolist-value;
+      > strong {
+        color: $color-infolist-value-active;
+        font-weight: normal;
+      }
+      em {
+        font-size: 12px;
+        color: $color-infolist-label;
+        font-style: normal;
+      }
+      > .mat-mdc-button {
+        margin: -4px 4px;
+        line-height: 24px;
+      }
+    }
+    > span + span {
+      flex-grow: 0;
+      margin-left: 1px;
+    }
+    > .mat-mdc-mdc-button-base {
+      margin: 0 2px;
+      line-height: 22px;
+      padding: 0 6px;
+      font-size: 13px;
+      &.mat-mdc-button .mat-mdc-icon {
+        margin-left: 4px;
+        line-height: 22px;
+      }
+    }
+    > label + .mat-mdc-button-base {
+      margin-left: 0;
+    }
+    &:hover > span {
+      background: $color-infolist-value-hover;
+    }
+  }
+  li.eth-warn {
+    color: darken($mat-warn, 10%);
+    > span {
+      color: darken($mat-warn, 10%);
+      background: rgba($mat-accent, 0.2);
+      > strong {
+        color: inherit;
+      }
+    }
+    &:hover > span {
+      background: rgba($mat-accent, 0.25);
+    }
+  }
+  li.eth-active {
+    > span {
+      color: $color-infolist-value-active;
+      background: rgba($mat-primary, 0.1);
+    }
+    &:hover > span {
+      background: rgba($mat-primary, 0.15);
+    }
+  }
+  .eth-half-info {
+    width: 50%;
+  }
+  .eth-full-info {
+    width: 100%;
+  }
+
+  .eth-filesize {
+    text-align: right;
+    white-space: nowrap;
+    color: #888;
+  }
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Inline Text Link for a Tag.
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////

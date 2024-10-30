@@ -1,7 +1,18 @@
 @for (wallet of wallets; track wallet.accounts) {
-  <div class="wallet">
-    <div class="wallet__name">{{ wallet.label }}</div>
-    <div class="wallet__address">{{ wallet.accounts[0].address }}</div>
-    <div class="wallet__balance">{{ wallet.accounts[0].balance.ETH }}</div>
-  </div>
+  <ul class="eth-infolist">
+    <li class="eth-full-info">
+      <label i18n>Label</label>
+      <span [textContent]="wallet.label"></span>
+    </li>
+    @for (account of wallet.accounts; track account.address) {
+      <li class="eth-half-info" *ngIf="account.address">
+        <label i18n>Address</label>
+        <span [textContent]="account.address"></span>
+      </li>
+      <li class="eth-half-info" *ngIf="account.balance">
+        <label i18n>Balance</label>
+        <span [textContent]="account.balance.ETH"></span>
+      </li>
+    }
+  </ul>
 }
