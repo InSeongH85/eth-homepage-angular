@@ -8,9 +8,9 @@
           <eth-menu-item #menu [menus]="child.c8n"></eth-menu-item>
         </span>
         <span *ngIf="child.c8n.length === 0 && child.isExposed && child.url.length >= 1">
-          <button mat-menu-item color="primary" (click)="openPage(child.url)">
+          <a [href]="child.url" mat-menu-item color="primary" (click)="openPage(child.url)">
             <span>{{child.name}}</span>
-          </button>
+          </a>
         </span>
       </span>
   }
