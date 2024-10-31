@@ -1,15 +1,17 @@
-<mat-menu #childMenu="matMenu" [overlapTrigger]="false" class="eth-gnb-submenu" (close)="emitClosed()">
-  <span *ngFor="let child of menus;">
-    <span *ngIf="child.c8n.length > 0 && child.isExposed">
-      <button mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu">
-        <span>{{child.name}}</span>
-      </button>
-      <eth-menu-item #menu [menus]="child.c8n"></eth-menu-item>
-    </span>
-    <span *ngIf="child.c8n.length === 0 && child.isExposed && child.url.length > 1">
-      <a [href]="baseHref + child.url" mat-menu-item (click)="openPage(child.url)">
-        <span>{{child.name}}</span>
-      </a>
-    </span>
-  </span>
+  <mat-menu #childMenu="matMenu" [overlapTrigger]="false" class="eth-gnb-submenu" (close)="emitClosed()">
+  @for (child of menus; track $index) {
+      <span>
+        <span *ngIf="child.c8n.length > 0 && child.isExposed">
+          <button mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu">
+            <span>{{child.name}}</span>
+          </button>
+          <eth-menu-item #menu [menus]="child.c8n"></eth-menu-item>
+        </span>
+        <span *ngIf="child.c8n.length === 0 && child.isExposed && child.url.length >= 1">
+          <button mat-menu-item color="primary" (click)="openPage(child.url)">
+            <span>{{child.name}}</span>
+          </button>
+        </span>
+      </span>
+  }
 </mat-menu>

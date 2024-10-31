@@ -196,6 +196,7 @@
               "projects/sites/eth/src/assets"
             ],
             "styles": [
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/root/src/scss/styles.scss",
               "projects/sites/eth/src/scss/styles.scss"
             ],

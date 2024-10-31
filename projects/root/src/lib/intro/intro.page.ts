@@ -10,12 +10,4 @@ export class IntroPage {
   constructor(
     private router: Router
   ) { }
-
-  moveTodos() {
-    this.router.navigate(['../todo/todos']);
-  }
-
-  moveMetamask() {
-    this.router.navigate(['../metamask/intro']);
-  }
 }

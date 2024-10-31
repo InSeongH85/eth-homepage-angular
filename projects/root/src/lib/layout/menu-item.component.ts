@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, EventEmitter, Input, Output, signal, Signal, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatMenu } from '@angular/material/menu';
 import { Menu } from './menus.model';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { LayoutService } from './layout.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MenuItemComponent {
-  @Input() menus: Menu[] | undefined = [];
+  @Input() menus: Menu[] = [];
   @Output() closed = new EventEmitter();
   @ViewChild('childMenu', { static: true }) childMenu: MatMenu = [] as any;
 
