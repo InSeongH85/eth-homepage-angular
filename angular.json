@@ -203,6 +203,12 @@
             "allowedCommonJsDependencies": [
               "crypto-js",
               "lodash",
+              "bowser",
+              "lodash.partition",
+              "lodash.merge",
+              "joi",
+              "eventemitter3",
+              "deepmerge",
               "@web3-onboard/core",
               "@web3-onboard/injected-wallets",
               "@metamask/detect-provider"
