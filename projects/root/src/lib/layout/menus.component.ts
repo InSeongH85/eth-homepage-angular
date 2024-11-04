@@ -26,7 +26,7 @@ export class MenusComponent implements OnInit{
     this.accessibleMenus.set([
       {id: 1, name: 'Home', url: '/', isExposed: true, hasChildren: false, sortOrder: 1,
         c8n: [
-          {id: 100, name: 'HomeSub', url: '/', isExposed: true, hasChildren: false, sortOrder: 1, c8n: []}
+          {id: 100, name: 'HomeSub', url: '/', isExposed: false, hasChildren: false, sortOrder: 1, c8n: []}
         ]
       },
       {id: 2, name: 'Todo', url: '../todo/todos', isExposed: true, hasChildren: false, sortOrder: 2, c8n: []},
@@ -37,7 +37,8 @@ export class MenusComponent implements OnInit{
   openMenu(index: number) {
     this.activeGnb = index;
     if (this.trigger) {
-      if (this.accessibleMenus()[index].c8n.length === 0 ) {
+      // c8n 이 없거나, c8n 중에 isExposed 가 true 인 것이 없으면 해당 url 로 이동
+      if (this.accessibleMenus()[index].c8n.length === 0 || this.accessibleMenus()[index].c8n.filter((item: Menu) => item.isExposed).length === 0) {
         this.router.navigate([this.accessibleMenus()[index].url]);
       }
       this.trigger.toArray().forEach((item: MatMenuTrigger, i: number) => {
