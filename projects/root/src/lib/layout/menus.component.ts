@@ -26,7 +26,7 @@ export class MenusComponent implements OnInit{
     this.accessibleMenus.set([
       {id: 1, name: 'Home', url: '/', isExposed: true, hasChildren: false, sortOrder: 1,
         c8n: [
-          // {id: 100, name: 'HomeSub', url: '/', isExposed: true, hasChildren: false, sortOrder: 1, c8n: []}
+          {id: 100, name: 'HomeSub', url: '/', isExposed: true, hasChildren: false, sortOrder: 1, c8n: []}
         ]
       },
       {id: 2, name: 'Todo', url: '../todo/todos', isExposed: true, hasChildren: false, sortOrder: 2, c8n: []},

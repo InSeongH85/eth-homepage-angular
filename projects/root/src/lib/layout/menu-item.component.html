@@ -1,5 +1,5 @@
-@for (child of menus; track $index) {
-  <mat-menu #childMenu="matMenu" [overlapTrigger]="false" class="eth-gnb-submenu" (close)="emitClosed()">
+<mat-menu #childMenu="matMenu" [overlapTrigger]="false" class="eth-gnb-submenu" (close)="emitClosed()">
+  @for (child of menus; track $index) {
     <span>
       <span *ngIf="child.c8n.length > 0 && child.isExposed">
         <button mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu">
@@ -13,5 +13,5 @@
         </a>
       </span>
     </span>
-  </mat-menu>
-}
+  }
+</mat-menu>
