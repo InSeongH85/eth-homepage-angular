@@ -200,6 +200,13 @@
               "projects/root/src/scss/styles.scss",
               "projects/sites/eth/src/scss/styles.scss"
             ],
+            "allowedCommonJsDependencies": [
+              "crypto-js",
+              "lodash",
+              "@web3-onboard/core",
+              "@web3-onboard/injected-wallets",
+              "@metamask/detect-provider"
+            ],
             "scripts": []
           },
           "configurations": {
