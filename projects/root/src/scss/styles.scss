@@ -463,27 +463,27 @@ ul.eth-infolist {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // GNB SUBMNEU
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-.mat-mdc-menu-panel.eth-gnb-submenu {
-  min-width: 150px;
-  background: lighten($color-header-gnb, 10%);
-  .mat-mdc-menu-content {
-    .mat-mdc-menu-item {
-      height: 32px;
-      line-height: 32px;
-      color: #fff;
-      &:hover {
-        color: $color-header-active;
-        font-weight: 500;
-        background: $color-header-gnb;
-      }
-    }
-    .mat-mdc-menu-item.mat-mdc-menu-item-highlighted {
-      color: $color-header-active;
-      font-weight: 500;
-      background: $color-header-gnb;
-    }
-    .mat-mdc-menu-submenu-icon {
-      color: inherit;
-    }
-  }
-}
+// .mat-mdc-menu-panel.eth-gnb-submenu {
+//   min-width: 150px;
+//   background: lighten($color-header-gnb, 10%);
+//   .mat-mdc-menu-content {
+//     .mat-mdc-menu-item {
+//       height: 32px;
+//       line-height: 32px;
+//       color: #fff;
+//       &:hover {
+//         color: $color-header-active;
+//         font-weight: 500;
+//         background: $color-header-gnb;
+//       }
+//     }
+//     .mat-mdc-menu-item.mat-mdc-menu-item-highlighted {
+//       color: $color-header-active;
+//       font-weight: 500;
+//       background: $color-header-gnb;
+//     }
+//     .mat-mdc-menu-submenu-icon {
+//       color: inherit;
+//     }
+//   }
+// }
