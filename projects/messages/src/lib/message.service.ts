@@ -133,15 +133,12 @@ export class MessageService {
    * @param linkUrl link
    */
   toastMessage(message: string, linkTitle?: string, linkUrl?: string) {
-    console.log(message);
     const option = { duration: 1000 };
     if (linkTitle && linkUrl) {
       this.snackBar.open(message, linkTitle, option).onAction().subscribe(_ => {
         this.router.navigateByUrl(linkUrl);
       });
     } else {
-      console.log(this.snackBar);
-      console.log(this.snackBar, option);
       this.snackBar.open(message, linkTitle, option);
     }
   }
