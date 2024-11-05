@@ -238,6 +238,7 @@
             ],
             "styles": [
               "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "projects/root/src/scss/styles.scss",
               "projects/sites/eth/src/scss/styles.scss"
             ],

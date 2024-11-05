@@ -37,18 +37,19 @@ export class MenusComponent implements OnInit{
   openMenu(index: number) {
     this.activeGnb = index;
     if (this.trigger) {
-      // c8n 이 없거나, c8n 중에 isExposed 가 true 인 것이 없으면 해당 url 로 이동
-      if (this.accessibleMenus()[index].c8n.length === 0 || this.accessibleMenus()[index].c8n.filter((item: Menu) => item.isExposed).length === 0) {
-        this.router.navigate([this.accessibleMenus()[index].url]);
-      }
       this.trigger.toArray().forEach((item: MatMenuTrigger, i: number) => {
         if (i !== index && item.menuOpen) {
           item.closeMenu();
         }
+        // c8n 이 없거나, c8n 중에 isExposed 가 true 인 것이 없으면 해당 url 로 이동
+        if (this.accessibleMenus()[index].c8n.length === 0 || this.accessibleMenus()[index].c8n.filter((item: Menu) => item.isExposed).length === 0) {
+          this.router.navigate([this.accessibleMenus()[index].url]);
+        }
       });
     }
   }
-  closedMenu(index: number) {
-    if (this.activeGnb === index) this.activeGnb = undefined;
-  }
+
+  // closedMenu(index: number) {
+  //   if (this.activeGnb === index) this.activeGnb = undefined;
+  // }
 }
