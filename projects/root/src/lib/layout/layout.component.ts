@@ -4,6 +4,14 @@ import { CommonService, WindowInfo, WindowService } from '../../../../common/src
 
 @Component({
   templateUrl: './layout.component.html',
+  styles: [
+    `
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+    `
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LayoutComponent implements OnInit, OnDestroy {

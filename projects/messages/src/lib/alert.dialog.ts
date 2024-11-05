@@ -4,8 +4,8 @@ import { WindowService } from '../../../common/src/public-api';
 
 @Component({
   template: `
-    <h2 md-dialog-title cdkDragHandle cdkDrag cdkDragRootElement=".cdk-overlay-pane">{{title}}</h2>
-    <div mat-dialog-content class="ikc-MessageDialog ikc-AlertDialog">
+    <h2 md-dialog-title ngClass="dialog-title-{{color}}" cdkDragHandle cdkDrag cdkDragRootElement=".cdk-overlay-pane">{{title}}</h2>
+    <div mat-dialog-content class="eth-MessageDialog eth-AlertDialog">
       <div [innerHTML]="message | sanitize"></div>
     </div>
     <div md-dialog-actions>
@@ -17,6 +17,7 @@ import { WindowService } from '../../../common/src/public-api';
 export class AlertDialog {
   title: string = '';
   message: string = '';
+  color = 'primary';
 
   constructor(
     public dialogRef: MatDialogRef<AlertDialog>,

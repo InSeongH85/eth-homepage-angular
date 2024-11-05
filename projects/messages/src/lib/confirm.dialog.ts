@@ -10,9 +10,6 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
     <div md-dialog-actions>
       <button mat-flat-button [color]="color" (click)="dialogRef.close(true)" i18n>예</button>
       <button mat-flat-button (click)="dialogRef.close(false)" i18n>아니오</button>
-      <!-- <span *ngIf="validationErrors" flex></span>
-      <button mat-button type="button" *ngIf="validationErrors" (click)="print()" i18n>출력</button>
-      <button mat-button type="button" *ngIf="validationErrors" (click)="copy()" i18n>복사</button> -->
     </div>
   `,
 })

@@ -30,30 +30,30 @@ body {
   font-size: 13px;
 }
 
-.eth-container {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  .eth-header-wrap {
-    position: relative;
-    width: 100%;
-  }
-  .eth-content {
-    position: relative;
-    z-index: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-    overflow: hidden;
-    > *:last-child {
-      flex-grow: 1;
-      height: 100%;
-    }
-  }
-}
+// .eth-container {
+//   display: flex;
+//   text-align: center;
+//   flex-direction: column;
+//   align-items: center;
+//   height: 100%;
+//   .eth-header-wrap {
+//     position: relative;
+//     width: 100%;
+//   }
+//   .eth-content {
+//     position: relative;
+//     z-index: 0;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     flex-grow: 1;
+//     overflow: hidden;
+//     > *:last-child {
+//       flex-grow: 1;
+//       height: 100%;
+//     }
+//   }
+// }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // flex layout
@@ -365,100 +365,122 @@ ul.eth-infolist {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Header layout
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-.eth-header {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  padding: 0;
-  background: $color-header-gnb;
-  > div {
-    position: relative;
-    flex-grow: 1;
-    @include animation;
-    .eth-gnb-wrap {
-      position: relative;
-      display: flex;
-      align-items: flex-start;
-      overflow: hidden;
-      padding: 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      box-sizing: border-box;
-    }
-    .eth-header-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0;
-      box-sizing: border-box;
-      @include animation;
-      .btn-logout {
-        min-width: 0;
-        height: 32px;
-        padding: 0 12px;
-        border-radius: 0;
-        box-sizing: border-box;
-        line-height: 32px;
-      }
-      // .btn-turnoff {
-      //   // 자동완성 on상태
-      //   color: $color-header-active;
-      // }
-      .btn-turnon {
-        // 자동완성 off상태
-        color: rgba(255, 255, 255, 0.6);
-      }
-    }
-  }
-  .mat-mdc-button-base {
-    min-width: 0;
-    height: 32px;
-    padding: 0 8px;
-    border-radius: 0;
-    box-sizing: border-box;
-    line-height: 32px;
-    color: #fff;
-  }
-  .btn-search-toggle {
-    display: none;
-  }
-}
+// .eth-header {
+//   position: relative;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: stretch;
+//   padding: 0;
+//   background: $color-header-gnb;
+//   > div {
+//     position: relative;
+//     flex-grow: 1;
+//     @include animation;
+//     .eth-gnb-wrap {
+//       position: relative;
+//       display: flex;
+//       align-items: flex-start;
+//       overflow: hidden;
+//       padding: 0;
+//       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+//       box-sizing: border-box;
+//     }
+//     .eth-header-nav {
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: center;
+//       padding: 0;
+//       box-sizing: border-box;
+//       @include animation;
+//       .btn-logout {
+//         min-width: 0;
+//         height: 32px;
+//         padding: 0 12px;
+//         border-radius: 0;
+//         box-sizing: border-box;
+//         line-height: 32px;
+//       }
+//       // .btn-turnoff {
+//       //   // 자동완성 on상태
+//       //   color: $color-header-active;
+//       // }
+//       .btn-turnon {
+//         // 자동완성 off상태
+//         color: rgba(255, 255, 255, 0.6);
+//       }
+//     }
+//   }
+//   .mat-mdc-button-base {
+//     min-width: 0;
+//     height: 32px;
+//     padding: 0 8px;
+//     border-radius: 0;
+//     box-sizing: border-box;
+//     line-height: 32px;
+//     color: #fff;
+//   }
+//   .btn-search-toggle {
+//     display: none;
+//   }
+// }
 
 // GNB
-.eth-header .eth-gnb-wrap {
-  .eth-logo {
-    display: inline-block;
-    min-width: 90px;
-    height: 32px;
-    margin: 0 0 0 12px;
-    background: url(/assets/images/logo-solars10-header.svg) no-repeat left
-      center;
-    font-size: 0;
-    @include animation;
+eth-menus {
+  flex-grow: 1;
+  width: 100px;
+  .menu-item.eth-active {
+    color: $color-header-active;
+    font-weight: 500;
+    background: darken($color-header-gnb, 10%);
   }
-  eth-menus {
-    flex-grow: 1;
-    width: 100px;
-    .menu-item.eth-active {
-      color: $color-header-active;
-      font-weight: 500;
-      background: darken($color-header-gnb, 10%);
+  .mat-mdc-tab-nav-bar.mat-primary {
+    background: inherit;
+    border: none;
+    &:hover .mat-mdc-tab-link-container {
+      z-index: 1001;
     }
-    .mat-mdc-tab-nav-bar.mat-primary {
-      background: inherit;
-      border: none;
-      &:hover .mat-mdc-tab-link-container {
-        z-index: 1001;
-      }
-      .mat-mdc-tab-header-pagination-chevron {
-        border-color: #fff;
-      }
-      .mat-mdc-tab-header-pagination-disabled {
-        opacity: 0.3;
-      }
+    .mat-mdc-tab-header-pagination-chevron {
+      border-color: #fff;
+    }
+    .mat-mdc-tab-header-pagination-disabled {
+      opacity: 0.3;
     }
   }
 }
+// .eth-header .eth-gnb-wrap {
+//   .eth-logo {
+//     display: inline-block;
+//     min-width: 90px;
+//     height: 32px;
+//     margin: 0 0 0 12px;
+//     background: url(/assets/images/logo-solars10-header.svg) no-repeat left
+//       center;
+//     font-size: 0;
+//     @include animation;
+//   }
+//   eth-menus {
+//     flex-grow: 1;
+//     width: 100px;
+//     .menu-item.eth-active {
+//       color: $color-header-active;
+//       font-weight: 500;
+//       background: darken($color-header-gnb, 10%);
+//     }
+//     .mat-mdc-tab-nav-bar.mat-primary {
+//       background: inherit;
+//       border: none;
+//       &:hover .mat-mdc-tab-link-container {
+//         z-index: 1001;
+//       }
+//       .mat-mdc-tab-header-pagination-chevron {
+//         border-color: #fff;
+//       }
+//       .mat-mdc-tab-header-pagination-disabled {
+//         opacity: 0.3;
+//       }
+//     }
+//   }
+// }
 // 메뉴 중 SubMenu 가 없을 경우 보이지 않는다.
 .mat-mdc-menu-panel.eth-gnb-submenu:not(.mat-mdc-menu-content.mat-mdc-menu-item) {
   min-width: 0px;

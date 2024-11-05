@@ -1,25 +1,4 @@
-<div #header class="eth-header">
-  <div>
-    <div class="eth-gnb-wrap">
-      <a class="eth-logo" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">ETH_HOME</a>
-      <eth-menus></eth-menus>
-    </div>
-    <div class="eth-header-nav">
-      <!-- <ik-breadcrumb></ik-breadcrumb> -->
-      <!-- <div class="ikc-header-func" *ngIf="authCookieInfo">
-        <button mat-flat-button *ngIf="!hideAutocomplete && unreadWidgetIds.length > 0" color="primary" (click)="openWidgetDialog()">
-          <mat-icon>notifications_active</mat-icon>
-          <span class="ikc-notification-cnt" [textContent]="unreadWidgetIds.length"></span>
-        </button>
-
-        <button mat-flat-button *ngIf="!hideAutocomplete && unreadWidgetIds.length === 0" (click)="openWidgetDialog()">
-          <mat-icon>notifications_none</mat-icon>
-        </button>
-        <div class="ikc-header-userinfo">
-          <em>{{ authCookieInfo.loginBranch.alias }}</em><strong>{{ authCookieInfo.name }}</strong><span i18n>님</span>
-        </div>
-        <button mat-flat-button color="warn" (click)="logout()" routerLinkActive="active" class="btn-logout" i18n>로그아웃</button>
-      </div> -->
-    </div>
-  </div>
-</div>
+<header #header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+  <!-- <a class="eth-logo" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">ETH_HOME</a> -->
+  <eth-menus></eth-menus>
+</header>
