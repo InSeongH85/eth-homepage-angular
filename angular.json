@@ -127,7 +127,7 @@
       "projectType": "library",
       "root": "projects/todo",
       "sourceRoot": "projects/todo/src",
-      "prefix": "todo",
+      "prefix": "eth",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -158,6 +158,47 @@
             "lintFilePatterns": [
               "projects/todo/src/**/*.ts",
               "projects/todo/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "crypto": {
+      "projectType": "library",
+      "root": "projects/crypto",
+      "sourceRoot": "projects/crypto/src",
+      "prefix": "eth",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/crypto/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/crypto/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/crypto/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/crypto/src/test.ts",
+            "tsConfig": "projects/crypto/tsconfig.spec.json",
+            "karmaConfig": "projects/crypto/karma.conf.js",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/crypto/src/**/*.ts",
+              "projects/crypto/src/**/*.html"
             ]
           }
         }

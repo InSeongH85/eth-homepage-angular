@@ -9,7 +9,7 @@ export const environment = {
     LABEL: $localize`원`,
     POSITION: 'after'
   },
-  INFURA_API_KEY: '91da5aba061543259f22e9fce7816b83',
+  ENCRYPT_KEY: 'MeMEProject-v1',
   PAGE_SIZE: 10,
   TO_DATE_FUNC_NAME: `TO_DATE('?', 'YYYY-MM-DD')`,
   UPLOAD_LIMIT_SIZE: 307200, // 300MB in kilobytes
