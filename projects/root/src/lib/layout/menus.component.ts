@@ -29,8 +29,8 @@ export class MenusComponent implements OnInit{
           {id: 100, name: 'HomeSub', url: '/', isExposed: false, hasChildren: false, sortOrder: 1, c8n: []}
         ]
       },
-      {id: 2, name: 'Todo', url: '../todo/todos', isExposed: false, hasChildren: false, sortOrder: 2, c8n: []},
-      {id: 3, name: 'Metamask', url: '../metamask/intro', isExposed: true, hasChildren: false, sortOrder: 3, c8n: []},
+      {id: 2, name: 'About', url: '/about', isExposed: true, hasChildren: false, sortOrder: 2, c8n: []},
+      {id: 3, name: 'Metamask', url: '/metamask/intro', isExposed: true, hasChildren: false, sortOrder: 3, c8n: []},
     ]);
   }
 

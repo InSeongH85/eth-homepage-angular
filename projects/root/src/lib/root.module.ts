@@ -26,6 +26,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { LayoutService } from './layout/layout.service';
 import { MenuItemComponent } from './layout/menu-item.component';
 import { MessagesModule } from '../../../messages/src/lib/messages.module';
+import { AboutPage } from './about/about.page';
 
 Settings.defaultZone = 'Asia/Seoul';
 
@@ -33,6 +34,7 @@ Settings.defaultZone = 'Asia/Seoul';
 @NgModule({
   declarations: [
     IntroPage,
+    AboutPage,
     LayoutComponent,
     HeaderComponent,
     MenusComponent,
