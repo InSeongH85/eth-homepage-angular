@@ -1,6 +1,9 @@
-<div class="container">
-  <div class="row flex-lg-row-reverse align-items-center">
-    <div class="col align-self-center">
+<div id="top" class="container">
+  <ng-container *ngTemplateOutlet="outletTemplate"></ng-container>
+</div>
+<ng-template #outletTemplate>
+  <div id="section1" class="row align-items-center">
+    <div class="col align-self-center intro-description">
       <h1 class="display-4 fw-bold lh-3 text-body-emphasis">GURI</h1>
       <p class="lead">First memecoin to make DAO a reality.</p>
       <p class="lead">it's time for Guri to take reign in blockchain market.</p>
@@ -10,8 +13,27 @@
         <button type="button" class="btn btn-outline-dark btn-lg px-4">XT.com</button>
       </div>
     </div>
-    <div class="col-10">
-      <img src="/assets/images/intro_background.png" class="img-fluid float-end" style="opacity: 0.3;" alt="intro_background">
+    <div class="col">
+      <img src="/assets/images/intro_background.png" class="img-fluid intro-guri-reverse" alt="intro_background">
     </div>
   </div>
-</div>
+  <div id="section2" tabindex="-1" class="row flex-lg-row align-items-center g-5 py-5 eth-section2" [ngStyle]="{'height': (useFrag ? sectionHeight + 'px' : '')}" [ngClass]="{'eth-section-active':frag === 2}">
+    <div class="col eth-about-coin">
+      <img src="/assets/images/about_coin.png" class="d-block mx-lg-auto img-fluid" alt="AboutGuriCoin" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col eth-about-description">
+      <h1 class="display-6 fw-bold text-body-emphasis lh-1 mb-3">About</h1>
+      <p class="lead">GURI TOKEN's ultimate vision is to build a DAO to eliminate centralized
+        power and to build an ecosystem that is transparent and reliable
+        by providing a system for users to participate in project operations
+        and decision-making, and to create an autonomous ecosystem where
+        users can be rewarded fairly.
+      </p>
+      <p class="lead">In addition, it will help users around the world familiarize themselves with
+        the blockchain ecosystem through interesting content that combines
+        K culture and Kmeme. Through this, we will promote blockchain participation through a cultural approach that provides both fun and value,
+        and allow users to naturally participate in the DAO ecosystem.
+      </p>
+    </div>
+  </div>
+</ng-template>
