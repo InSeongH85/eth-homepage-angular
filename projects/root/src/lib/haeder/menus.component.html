@@ -2,7 +2,7 @@
   @for (mainMenu of accessibleMenus(); track $index) {
     <span *ngIf="mainMenu.isExposed">
       <button mat-button color="primary" class="menu-item btn btn-secondary rounded-pill"
-        (click)="moveMenu($index)" [ngClass]="activeGnb === $index ? 'eth-active':''">
+        (click)="mainMenu.useRoute ? openPage(mainMenu.url) : moveMenu($index)" [ngClass]="activeGnb === $index ? 'eth-active':''">
           {{mainMenu.name}}
       </button>
     </span>

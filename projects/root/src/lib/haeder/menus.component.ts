@@ -1,7 +1,9 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnInit, Output, QueryList, signal, ViewChildren, ViewEncapsulation, WritableSignal } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Menu } from './menus.model';
+import { LayoutService } from '../layout/layout.service';
+import { CommonService, WindowService } from '../../../../common/src/public-api';
 
 @Component({
   selector: 'eth-menus',
@@ -19,19 +21,22 @@ export class MenusComponent implements OnInit{
 
   constructor(
     private cdr: ChangeDetectorRef,
+    private route: ActivatedRoute,
     private router: Router,
+    private commonService: CommonService,
+    private layoutService: LayoutService,
+    private windowService: WindowService,
   ) { }
 
 
   ngOnInit(): void {
     this.accessibleMenus.set([
-      {id: 1, name: 'Home', url: '/', isExposed: true, hasChildren: false, sortOrder: 1,
+      {id: 1, name: 'Home', url: '/', isExposed: true, hasChildren: false, sortOrder: 1, useRoute: false,
         c8n: [
           {id: 100, name: 'HomeSub', url: '/', isExposed: false, hasChildren: false, sortOrder: 1, c8n: []}
         ]
       },
-      {id: 2, name: 'About', url: '/about', isExposed: true, hasChildren: false, sortOrder: 2, c8n: []},
-      {id: 3, name: 'Metamask', url: '/metamask/intro', isExposed: true, hasChildren: false, sortOrder: 3, c8n: []},
+      {id: 2, name: 'About', url: '/about', isExposed: true, hasChildren: false, sortOrder: 2, useRoute: false, c8n: []},
     ]);
   }
 
@@ -50,6 +55,26 @@ export class MenusComponent implements OnInit{
     }
   }
 
+  /**
+   * 페이지 이동
+   * @param url
+   * @returns
+   */
+  openPage(url: string): boolean {
+    if (url.startsWith('http')) {
+      this.windowService.openUrl(url);
+    } else {
+      const currentUrl = this.layoutService.getUrlStem('/' + this.commonService.getCurrentUrl(this.route));
+      if (url !== currentUrl)
+        this.router.navigateByUrl(url);
+    }
+    return false;
+  }
+
+  /**
+   * Fragment 이동
+   * @param fragment
+   */
   moveMenu(fragment: number) {
     const frag = fragment + 1;
     const fragName = 'section' + frag;
@@ -59,9 +84,5 @@ export class MenusComponent implements OnInit{
       el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
     }
     this.selectedFragment.emit(frag);
-    return false;
   }
-  // closedMenu(index: number) {
-  //   if (this.activeGnb === index) this.activeGnb = undefined;
-  // }
 }
