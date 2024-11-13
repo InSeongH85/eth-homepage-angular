@@ -36,7 +36,8 @@ export class MenusComponent implements OnInit{
           {id: 100, name: 'HomeSub', url: '/', isExposed: false, hasChildren: false, sortOrder: 1, c8n: []}
         ]
       },
-      {id: 2, name: 'About', url: '/about', isExposed: true, hasChildren: false, sortOrder: 2, useRoute: false, c8n: []},
+      {id: 2, name: 'About', url: '', isExposed: true, hasChildren: false, sortOrder: 2, useRoute: false, c8n: []},
+      {id: 3, name: 'How to buy', url: '', isExposed: true, hasChildren: false, sortOrder: 2, useRoute: false, c8n: []},
     ]);
   }
 
