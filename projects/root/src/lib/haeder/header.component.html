@@ -4,8 +4,8 @@
   </div>
   <eth-menus (selectedFragment)="moveMenuEvent($event)"></eth-menus>
   <!-- <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar"> -->
-  <div class="col-md-3 text-end" *ngIf="wallets().length === 0">
-    <button type="button" class="btn btn-outline-primary me-2" (click)="getMetamaskWallets()">Login Metamask</button>
+  <div class="col-md-3 text-end">
+    <button  *ngIf="wallets().length === 0" type="button" class="btn btn-outline-primary me-2" (click)="getMetamaskWallets()">Login Metamask</button>
   </div>
 </header>
 
