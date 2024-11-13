@@ -1,10 +1,10 @@
-<nav>
+<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
   @for (mainMenu of accessibleMenus(); track $index) {
-    <span *ngIf="mainMenu.isExposed">
-      <button mat-button color="primary" class="menu-item btn btn-secondary rounded-pill"
-        (click)="mainMenu.useRoute ? openPage(mainMenu.url) : moveMenu($index)" [ngClass]="activeGnb === $index ? 'eth-active':''">
+    <li *ngIf="mainMenu.isExposed">
+      <button mat-button color="primary" class="nav-link px-2 link-secondary" [ngClass]="activeGnb === $index ? 'eth-active':''"
+        (click)="mainMenu.useRoute ? openPage(mainMenu.url) : moveMenu($index)">
           {{mainMenu.name}}
       </button>
-    </span>
+    </li>
   }
-</nav>
+</ul>

@@ -1,4 +1,43 @@
 <header #header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-  <a class="eth-logo" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">ETH_HOME</a>
+  <div class="col-md-3 mb-2 mb-md-0">
+    <a href="/" class="eth-logo d-inline-flex link-body-emphasis text-decoration-none"></a>
+  </div>
   <eth-menus (selectedFragment)="moveMenuEvent($event)"></eth-menus>
+  <!-- <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar"> -->
+  <div class="col-md-3 text-end" *ngIf="wallets().length === 0">
+    <button type="button" class="btn btn-outline-primary me-2" (click)="getMetamaskWallets()">Login Metamask</button>
+  </div>
 </header>
+
+<!-- @for (wallet of wallets(); track wallet.accounts) {
+  <ul class="eth-infolist">
+    <li>
+      <label i18n>ICON</label>
+      <span><img [src]="wallet.icon"></span>
+    </li>
+    <li class="eth-full-info">
+      <label i18n>Label</label>
+      <span [textContent]="wallet.label"></span>
+    </li>
+    @for (chain of wallet.chains; track $index) {
+      <li class="eth-half-info" *ngIf="chain.id">
+        <label i18n>Chain ID</label>
+        <span [textContent]="chain.id"></span>
+      </li>
+      <li class="eth-half-info" *ngIf="chain.namespace">
+        <label i18n>ChainNameSpace</label>
+        <span [textContent]="chain.namespace"></span>
+      </li>
+    }
+    @for (account of wallet.accounts; track account.address) {
+      <li class="eth-half-info" *ngIf="account.address">
+        <label i18n>Address</label>
+        <span [textContent]="account.address"></span>
+      </li>
+      <li class="eth-half-info" *ngIf="account.balance">
+        <label i18n>Balance</label>
+        <span [textContent]="account.balance.ETH"></span>
+      </li>
+    }
+  </ul>
+} -->

@@ -24,6 +24,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { LayoutService } from './layout/layout.service';
 import { MessagesModule } from '../../../messages/src/lib/messages.module';
 import { MenusComponent } from './haeder/menus.component';
+import { MetamaskService } from './metamask/metamask.service';
 
 Settings.defaultZone = 'Asia/Seoul';
 
@@ -51,6 +52,7 @@ Settings.defaultZone = 'Asia/Seoul';
     MatIconModule,
   ],
   providers: [
+    MetamaskService,
     LayoutService,
     DecimalPipe,
     { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true },
