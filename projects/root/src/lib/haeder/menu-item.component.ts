@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, effect, EventEmitter, Input, Output, signal, Signal, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatMenu } from '@angular/material/menu';
-import { Menu } from './menus.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonService, WindowService } from '../../../../common/src/public-api';
-import { LayoutService } from './layout.service';
+import { LayoutService } from '../layout/layout.service';
+import { Menu } from './menus.model';
 
 @Component({
   selector: 'eth-menu-item',

@@ -6,7 +6,6 @@ export class WindowInfo {
   isMediumScreen: boolean = false;
   isLargeScreen: boolean = false;
   isVeryLargeScreen: boolean = false;
-  isSolarsBrowser: boolean = false;
   verticalOffset: number = 0;
   clientWidth: number = 0;
   clientHeight: number = 0;

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, QueryList, signal, ViewChildren, ViewEncapsulation, WritableSignal } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
-import { Menu } from './menus.model';
 import { Router } from '@angular/router';
+import { Menu } from './menus.model';
 
 @Component({
   selector: 'eth-menus',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class MenusComponent implements OnInit{
   @ViewChildren(MatMenuTrigger) trigger: QueryList<MatMenuTrigger> | undefined;
-
+  readonly frag = signal<number>(1);
   enterGnb: boolean | undefined = false;
   activeGnb: number | undefined = 0;
   accessibleMenus: WritableSignal<Menu[]> = signal<Menu[]>([]);
@@ -49,6 +49,16 @@ export class MenusComponent implements OnInit{
     }
   }
 
+  moveMenu(fragment: number) {
+    const frag = fragment + 1;
+    const fragName = 'section' + frag;
+    const el = document.getElementById(fragName);
+    if (el) {
+      el.focus({ preventScroll: true });
+      el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }
+    return false;
+  }
   // closedMenu(index: number) {
   //   if (this.activeGnb === index) this.activeGnb = undefined;
   // }

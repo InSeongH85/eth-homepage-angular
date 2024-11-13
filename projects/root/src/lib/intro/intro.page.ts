@@ -1,7 +1,6 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, signal, ViewEncapsulation, WritableSignal } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from '../../../../messages/src/public-api';
-import { Subscription } from 'rxjs';
 import { WindowInfo, WindowService } from '../../../../common/src/public-api';
 
 const fragments = ['section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'section7'];
@@ -15,7 +14,7 @@ export class IntroPage implements OnInit {
   // @ViewChild('top', { read: ElementRef }) topEl: ElementRef;
   windowInfo: WindowInfo = new WindowInfo();
   sectionHeight = 860; // SECTION기본높이
-  frag = 1;
+  frag: WritableSignal<number> = signal(1);
   useFrag: boolean = false;
   isHeaderFixed = false;
   fixedHeaderHeight = 140;
@@ -28,7 +27,6 @@ export class IntroPage implements OnInit {
   constructor(
     private router: Router,
     private cdr: ChangeDetectorRef,
-    private ngZone: NgZone,
     private messageService: MessageService,
     private windowService: WindowService,
   ) {
@@ -65,9 +63,23 @@ export class IntroPage implements OnInit {
       fragments.forEach((fragment: string) => {
         const el = document.getElementById(fragment);
         if (el && this.windowService.isVisible(el)) {
-          this.frag = Number(fragment.substring(7, 8));
+          this.frag.set(Number(fragment.substring(7, 8)));
         }
       });
     }, 100);
+  }
+
+  /**
+   * Jump to Fragment
+   */
+  jumpToFragment(fragment: number): boolean {
+    this.frag.set(fragment);
+    const fragName = 'section' + fragment;
+    const el = document.getElementById(fragName);
+    if (el) {
+      el.focus({ preventScroll: true });
+      el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }
+    return false;
   }
 }

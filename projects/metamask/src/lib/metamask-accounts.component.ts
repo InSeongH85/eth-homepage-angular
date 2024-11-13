@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, effect, Input, InputSignal, OnChanges, OnInit, Signal, signal, SimpleChanges, ViewEncapsulation, WritableSignal } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, Signal, signal, ViewEncapsulation } from '@angular/core';
 import { MetamaskWallet } from './metamask.model';
 import { SDKProvider } from '@metamask/sdk';
 import { MetamaskService } from './metamask.service';
