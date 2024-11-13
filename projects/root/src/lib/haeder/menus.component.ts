@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, QueryList, signal, ViewChildren, ViewEncapsulation, WritableSignal } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnInit, Output, QueryList, signal, ViewChildren, ViewEncapsulation, WritableSignal } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { Router } from '@angular/router';
 import { Menu } from './menus.model';
@@ -11,6 +11,7 @@ import { Menu } from './menus.model';
 })
 export class MenusComponent implements OnInit{
   @ViewChildren(MatMenuTrigger) trigger: QueryList<MatMenuTrigger> | undefined;
+  @Output() selectedFragment = new EventEmitter<number>();
   readonly frag = signal<number>(1);
   enterGnb: boolean | undefined = false;
   activeGnb: number | undefined = 0;
@@ -57,6 +58,7 @@ export class MenusComponent implements OnInit{
       el.focus({ preventScroll: true });
       el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
     }
+    this.selectedFragment.emit(frag);
     return false;
   }
   // closedMenu(index: number) {

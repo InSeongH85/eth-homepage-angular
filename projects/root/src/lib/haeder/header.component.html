@@ -1,4 +1,4 @@
 <header #header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
   <a class="eth-logo" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">ETH_HOME</a>
-  <eth-menus></eth-menus>
+  <eth-menus (selectedFragment)="moveMenuEvent($event)"></eth-menus>
 </header>

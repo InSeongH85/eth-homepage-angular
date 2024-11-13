@@ -12,7 +12,6 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { EthCommonModule } from '../../../common/src/public-api';
 import { RootRoutingModule } from './root-routing.module';
-import { TodosModule } from '../../../todo/src/public-api';
 import { IntroPage } from './intro/intro.page';
 import { LayoutComponent } from './layout/layout.component';
 import { MetamaskModule } from '../../../metamask/src/public-api';
@@ -24,21 +23,16 @@ import { HeaderComponent } from './haeder/header.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { LayoutService } from './layout/layout.service';
 import { MessagesModule } from '../../../messages/src/lib/messages.module';
-import { AboutPage } from './about/about.page';
 import { MenusComponent } from './haeder/menus.component';
-import { MenuItemComponent } from './haeder/menu-item.component';
 
 Settings.defaultZone = 'Asia/Seoul';
-
 
 @NgModule({
   declarations: [
     IntroPage,
-    AboutPage,
     LayoutComponent,
     HeaderComponent,
     MenusComponent,
-    MenuItemComponent,
     RootComponent,
   ],
   imports: [
@@ -48,7 +42,6 @@ Settings.defaultZone = 'Asia/Seoul';
     RouterModule,
     RootRoutingModule,
     EthCommonModule,
-    TodosModule,
     EthCommonModule,
     MessagesModule,
     MetamaskModule,

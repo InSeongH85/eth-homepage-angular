@@ -1,12 +1,10 @@
-<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+<nav>
   @for (mainMenu of accessibleMenus(); track $index) {
     <span *ngIf="mainMenu.isExposed">
-      <button mat-button color="primary" class="menu-item btn btn-secondary rounded-pill" [matMenuTriggerFor]="menu.childMenu"
-        (click)="openMenu($index)" [ngClass]="activeGnb === $index ? 'eth-active':''">
+      <button mat-button color="primary" class="menu-item btn btn-secondary rounded-pill"
+        (click)="moveMenu($index)" [ngClass]="activeGnb === $index ? 'eth-active':''">
           {{mainMenu.name}}
       </button>
-      <eth-menu-item #menu [menus]="mainMenu.c8n"></eth-menu-item>
     </span>
   }
 </nav>
-<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>

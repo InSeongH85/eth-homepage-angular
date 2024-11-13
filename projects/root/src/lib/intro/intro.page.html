@@ -1,5 +1,5 @@
 <div id="top" class="container">
-  <eth-header></eth-header>
+  <eth-header (moveMenu)="jumpToFragment($event)"></eth-header>
   <ng-container *ngTemplateOutlet="outletTemplate"></ng-container>
 </div>
 <ng-template #outletTemplate>
@@ -37,7 +37,7 @@
       </p>
     </div>
   </div>
-  <div id="section3" tabindex="-1" class="row align-items-center d-flex eth-section3"  [ngStyle]="{'height': (useFrag ? sectionHeight + 'px' : '')}" [ngClass]="{'eth-section-active' : frag() === 3}">
+  <div id="section3" tabindex="-1" class="row align-items-center d-flex eth-section3" [ngStyle]="{'height': (useFrag ? sectionHeight + 'px' : '')}" [ngClass]="{'eth-section-active' : frag() === 3}">
     <div class="align-self-center p-5 text-left eth-how-to-buy">
       <p class="fs-1 fw-bold w-100 spacing-bottom">How to buy</p>
       <div class="row row-border">

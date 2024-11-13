@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { WindowInfo, WindowService } from '../../../../common/src/public-api';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
 
   @ViewChild('header') headerEl: ElementRef | undefined;
 
+  @Output() moveMenu = new EventEmitter<number>();
   private stop$ = new Subject<void>();
 
   constructor(
@@ -26,5 +27,9 @@ export class HeaderComponent implements OnInit {
       this.windowInfo = info;
       this.cdr.detectChanges();
     });
+  }
+
+  moveMenuEvent(index: number) {
+    this.moveMenu.emit(index);
   }
 }

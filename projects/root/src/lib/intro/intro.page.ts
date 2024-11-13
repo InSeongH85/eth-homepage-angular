@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { MessageService } from '../../../../messages/src/public-api';
 import { WindowInfo, WindowService } from '../../../../common/src/public-api';
 
-const fragments = ['section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'section7'];
+const fragments = ['section1', 'section2', 'section3'];
 
 @Component({
   templateUrl: './intro.page.html',
@@ -66,16 +66,15 @@ export class IntroPage implements OnInit {
           this.frag.set(Number(fragment.substring(7, 8)));
         }
       });
-    }, 100);
+    }, 300);
   }
 
   /**
    * Jump to Fragment
    */
-  jumpToFragment(fragment: number): boolean {
-    this.frag.set(fragment);
-    const fragName = 'section' + fragment;
-    const el = document.getElementById(fragName);
+  jumpToFragment(fragment: number) {
+    const index = fragments.findIndex((frag: string) => { return Number(frag.substring(7, 8)) === fragment});
+    const el = document.getElementById(index > -1 ? fragments[index] : 'section1');
     if (el) {
       el.focus({ preventScroll: true });
       el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
