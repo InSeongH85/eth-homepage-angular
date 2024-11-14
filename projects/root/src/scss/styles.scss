@@ -105,6 +105,19 @@ body {
       opacity: 1;
     }
   }
+  .eth-section4 {
+    .eth-double {
+      opacity: 0;
+      transition: margin .8s ease-in-out, opacity .3s ease-in-out;
+      transition-delay: .1s;
+    }
+  }
+  .eth-section4.eth-section-active {
+    .eth-double {
+      margin-top: 0;
+      opacity: 1;
+    }
+  }
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // HEADER LOGO

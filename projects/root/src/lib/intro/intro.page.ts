@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { MessageService } from '../../../../messages/src/public-api';
 import { WindowInfo, WindowService } from '../../../../common/src/public-api';
 
-const fragments = ['section1', 'section2', 'section3'];
+const fragments = ['section1', 'section2', 'section3', 'section4'];
 
 @Component({
   templateUrl: './intro.page.html',
