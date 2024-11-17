@@ -39,6 +39,8 @@ export class MenusComponent implements OnInit{
       {id: 2, name: 'About', url: '', isExposed: true, hasChildren: false, sortOrder: 2, useRoute: false, c8n: []},
       {id: 3, name: 'How to buy', url: '', isExposed: true, hasChildren: false, sortOrder: 3, useRoute: false, c8n: []},
       {id: 4, name: 'Tokenomics', url: '', isExposed: true, hasChildren: false, sortOrder: 4, useRoute: false, c8n: []},
+      {id: 5, name: 'Roadmap', url: '', isExposed: true, hasChildren: false, sortOrder: 5, useRoute: false, c8n: []},
+      {id: 6, name: 'White Paper', url: '', isExposed: true, hasChildren: false, sortOrder: 6, useRoute: false, c8n: []},
     ]);
   }
 

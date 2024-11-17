@@ -118,6 +118,32 @@ body {
       opacity: 1;
     }
   }
+  .eth-section5 {
+    .eth-roadmap {
+      opacity: 0;
+      transition: margin .8s ease-in-out, opacity .3s ease-in-out;
+      transition-delay: .1s;
+    }
+  }
+  .eth-section5.eth-section-active {
+    .eth-roadmap {
+      margin-top: 0;
+      opacity: 1;
+    }
+  }
+  .eth-section6 {
+    .eth-white-paper {
+      opacity: 0;
+      transition: margin .8s ease-in-out, opacity .3s ease-in-out;
+      transition-delay: .1s;
+    }
+  }
+  .eth-section6.eth-section-active {
+    .eth-white-paper {
+      margin-top: 0;
+      opacity: 1;
+    }
+  }
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // HEADER LOGO

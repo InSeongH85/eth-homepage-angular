@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { MessageService } from '../../../../messages/src/public-api';
 import { WindowInfo, WindowService } from '../../../../common/src/public-api';
 
-const fragments = ['section1', 'section2', 'section3', 'section4'];
+const fragments = ['section1', 'section2', 'section3', 'section4', 'section5', 'section6'];
 
 @Component({
   templateUrl: './intro.page.html',
@@ -80,5 +80,38 @@ export class IntroPage implements OnInit {
       el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
     }
     return false;
+  }
+
+  /**
+   * WhitePaper 다운로드 클릭시
+   * @param lang
+   * @param isShort
+   */
+  downloadWhitePaper(lang: string, isShort: boolean) {
+    let fileName = '';
+    const filePathPrefx = '../../../assets/white-paper/';
+    if (lang === 'en') {
+      fileName = isShort ? 'whitepaper_en.pptx' : 'whitepaper_short_en.pptx';
+    } else if (lang === 'ko') {
+      fileName = isShort ? 'WhitePaper-Short-KR.docx' : 'WhitePaper-KR.pptx';
+    }
+    const fileUrl = filePathPrefx.concat(fileName);
+    this.downloadFile(fileUrl, fileName);
+  }
+
+  /**
+   * 실제 다운로드
+   * document 에 a 태그를 생성하여 클릭시킴. 그 후 삭제
+   * @param url
+   * @param fileName
+   */
+  downloadFile(url: string, fileName: string) {
+    const downloadLink = document.createElement('a');
+    // downloadLink.href = window.URL.createObjectURL(new Blob([data], { type: 'application/octet-stream' }));
+    downloadLink.href = url;
+    downloadLink.setAttribute('download', fileName);
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    downloadLink.remove();
   }
 }
