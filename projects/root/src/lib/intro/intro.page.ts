@@ -90,10 +90,13 @@ export class IntroPage implements OnInit {
   downloadWhitePaper(lang: string, isShort: boolean) {
     let fileName = '';
     const filePathPrefx = '../../../assets/white-paper/';
-    if (lang === 'en') {
-      fileName = isShort ? 'whitepaper_en.pptx' : 'whitepaper_short_en.pptx';
-    } else if (lang === 'ko') {
-      fileName = isShort ? 'WhitePaper-Short-KR.docx' : 'WhitePaper-KR.pptx';
+    switch (lang) {
+      case 'en':
+        fileName = isShort ? 'WhitePaper-Short-EN.docx' : 'WhitePaper-EN.pptx';
+        break;
+      case 'ko':
+        fileName = isShort ? 'WhitePaper-Short-KR.docx' : 'WhitePaper-KR.pptx';
+        break;
     }
     const fileUrl = filePathPrefx.concat(fileName);
     this.downloadFile(fileUrl, fileName);
