@@ -2,26 +2,26 @@
   <eth-header (moveMenu)="jumpToFragment($event)"></eth-header>
   <!-- section1 -->
   <div id="section1" class="row align-items-center d-flex eth-section1" [ngStyle]="{'height': (useFrag ? sectionHeight + 'px' : '')}" [ngClass]="{'eth-section-active' : frag() === 1}">
-    <div class="p-5 col align-self-center intro-description">
+    <div class="p-3 p-md-5 col-12 col-md-6 align-self-center intro-description">
       <h1 class="display-4 fw-bold lh-3 text-body-emphasis">GURI</h1>
       <p class="lead">First memecoin to make DAO a reality.</p>
       <p class="lead">it's time for Guri to take reign in blockchain market.</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-        <button type="button" class="btn btn-outline-primary btn-lg px-4">Upbit</button>
-        <button type="button" class="btn btn-outline-warning btn-lg px-4">Binance</button>
-        <button type="button" class="btn btn-outline-dark btn-lg px-4">XT.com</button>
+        <button type="button" class="btn btn-outline-primary btn-lg px-4 flex-fill">Upbit</button>
+        <button type="button" class="btn btn-outline-warning btn-lg px-4 flex-fill">Binance</button>
+        <button type="button" class="btn btn-outline-dark btn-lg px-4 flex-fill">XT.com</button>
       </div>
     </div>
-    <div class="col">
+    <div class="col-12 col-md-6 text-center">
       <img src="/assets/images/intro_background.png" class="img-fluid intro-guri-reverse" alt="intro_background">
     </div>
   </div>
   <!-- section2 -->
   <div id="section2" tabindex="-1" class="row flex-lg-row align-items-center eth-section2" [ngStyle]="{'height': (useFrag ? sectionHeight + 'px' : '')}" [ngClass]="{'eth-section-active' : frag() === 2}">
-    <div class="col eth-about-coin">
-      <img src="/assets/images/about_coin.png" class="d-block mx-lg-auto img-fluid" alt="AboutGuriCoin" width="700" height="500" loading="lazy">
+    <div class="col-12 col-lg-6 eth-about-coin order-2 order-lg-1">
+      <img src="/assets/images/about_coin.png" class="d-block mx-auto img-fluid" alt="AboutGuriCoin" width="700" height="500" loading="lazy">
     </div>
-    <div class="col eth-about-description">
+    <div class="col-12 col-lg-6 eth-about-description p-4 order-1 order-lg-2">
       <h1 class="display-6 fw-bold text-body-emphasis lh-1 mb-3">About</h1>
       <p class="lead lh-sm">GURI TOKEN's ultimate vision is to build a DAO to eliminate centralized
         power and to build an ecosystem that is transparent and reliable
@@ -38,82 +38,83 @@
   </div>
   <!-- section3 -->
   <div id="section3" tabindex="-1" class="row align-items-center d-flex eth-section3" [ngStyle]="{'height': (useFrag ? sectionHeight + 'px' : '')}" [ngClass]="{'eth-section-active' : frag() === 3}">
-    <div class="align-self-center p-5 text-left eth-how-to-buy">
+    <div class="align-self-center p-3 p-md-5 text-left eth-how-to-buy">
       <p class="fs-1 fw-bold w-100 spacing-bottom">How to buy</p>
-      <div class="row row-border">
-        <div class="w-25">
+      <div class="row row-border align-items-center">
+        <div class="col-4 col-md-3 mb-3 mb-md-0">
           <img src="/assets/images/call_wallet_address.png" class="img-fluid" loading="lazy">
         </div>
-        <div class="w-75">
-          <h2>Create a wallet</h2>
-          <p class="lead">Download metamask or your wallet of choice</p>
-          <p class="lead">from the AppStore or Google PlayStore for free.</p>
-          <p class="lead">Desktop users, Download the google Chrome extension by going to Metamask.io</p>
+        <div class="col-8 col-md-9">
+          <h2 class="h3">Create a wallet</h2>
+          <p class="lead fs-6 fs-md-5">Download metamask or your wallet of choice</p>
+          <p class="lead fs-6 fs-md-5">from the AppStore or Google PlayStore for free.</p>
+          <p class="lead fs-6 fs-md-5">Desktop users, Download the google Chrome extension by going to Metamask.io</p>
         </div>
       </div>
-      <div class="row row-border">
-        <div class="w-25">
+      <div class="row row-border align-items-center">
+        <div class="col-4 col-md-3 mb-3 mb-md-0">
           <img src="/assets/images/some_eth.png" class="img-fluid" loading="lazy">
         </div>
-        <div class="w-75">
-          <h2>Get some ETH</h2>
-          <p class="lead">Have EHT in your wallet to switch to Guri. </p>
-          <p class="lead">If you don't have any ETH, you can buy directly on Metamask.</p>
-          <p class="lead">transfer from another wallet, or buy on another exchange and send it to your wallet</p>
+        <div class="col-8 col-md-9">
+          <h2 class="h3">Get some ETH</h2>
+          <p class="lead fs-6 fs-md-5">Have EHT in your wallet to switch to Guri. </p>
+          <p class="lead fs-6 fs-md-5">If you don't have any ETH, you can buy directly on Metamask.</p>
+          <p class="lead fs-6 fs-md-5">transfer from another wallet, or buy on another exchange and send it to your wallet</p>
         </div>
       </div>
-      <div class="row row-border">
-        <div class="w-25">
+      <div class="row row-border align-items-center">
+        <div class="col-4 col-md-3 mb-3 mb-md-0">
           <img src="/assets/images/get_some_node.png" class="img-fluid" loading="lazy">
         </div>
-        <div class="w-75">
-          <h2>Go to XT.com</h2>
-          <p class="lead">Connect to XT.com. Go to the browser inside your Metamask app. </p>
-          <p class="lead">Connect your wallet.</p>
-          <p class="lead">Paste the Guri token address into XT.com</p>
-          <p class="lead">Select Guri, and confirm. When Metamask prompts you for a wallet signature sign.</p>
+        <div class="col-8 col-md-9">
+          <h2 class="h3">Go to XT.com</h2>
+          <p class="lead fs-6 fs-md-5">Connect to XT.com. Go to the browser inside your Metamask app. </p>
+          <p class="lead fs-6 fs-md-5">Connect your wallet.</p>
+          <p class="lead fs-6 fs-md-5">Paste the Guri token address into XT.com</p>
+          <p class="lead fs-6 fs-md-5">Select Guri, and confirm. When Metamask prompts you for a wallet signature sign.</p>
         </div>
       </div>
     </div>
   </div>
   <!-- section4 -->
   <div id="section4" tabindex="-1" class="row align-items-center d-flex eth-section4" [ngStyle]="{'height': (useFrag ? sectionHeight + 'px' : '')}" [ngClass]="{'eth-section-active' : frag() === 4}">
-    <div class="col eth-double">
-      <h1 class="display-4 fw-bold lh-3 text-body-emphasis">Tokenomics</h1>
-      <p class="lead">Token supply 5,000,000,000,000,000</p>
-      <div class="row row-border">
-        <p class="lead">The total token issuance for the GURI TOKEN project was set at 5000 trillion GURI TOKEN.</p>
+    <div class="col-12 col-lg-6 eth-double p-4">
+      <h1 class="display-4 fw-bold lh-3 text-body-emphasis mb-4">Tokenomics</h1>
+      <p class="lead mb-4">Token supply 5,000,000,000,000,000</p>
+      <div class="row row-border p-3">
+        <p class="lead mb-2">The total token issuance for the GURI TOKEN project was set at 5000 trillion GURI TOKEN.</p>
         <p class="lead">It will be used to provide various activities and incentives within the ecosystem of the project.</p>
       </div>
     </div>
-    <div class="col-md-auto eth-double">
-      <img src="/assets/images/go_to_double.png" class="img-fluid" />
+    <div class="col-12 col-lg-6 eth-double text-center p-4">
+      <img src="/assets/images/go_to_double.png" class="img-fluid" alt="Tokenomics chart" />
     </div>
   </div>
   <!-- section5 -->
   <div id="section5" tabindex="-1" class="row align-items-center d-flex eth-section5" [ngStyle]="{'height': (useFrag ? sectionHeight + 'px' : '')}" [ngClass]="{'eth-section-active' : frag() === 5}">
-    <div class="col eth-roadmap">
-      <img src="/assets/images/guri_roadmap.png" class="img-fluid" />
+    <div class="col-12 eth-roadmap p-4">
+      <h1 class="display-4 fw-bold text-center mb-5">Roadmap</h1>
+      <img src="/assets/images/guri_roadmap.png" class="img-fluid" alt="Guri roadmap" />
     </div>
   </div>
   <!-- section6 -->
   <div id="section6" tabindex="-1" class="row align-items-center d-flex eth-section6" [ngStyle]="{'height': (useFrag ? sectionHeight + 'px' : '')}" [ngClass]="{'eth-section-active' : frag() === 6}">
-    <div class="text-center eth-white-paper">
-      <div class="col align-self-center">
+    <div class="text-center eth-white-paper p-4">
+      <div class="col-12 align-self-center mb-4">
         <h1 class="display-4 fw-bold lh-3 text-body-emphasis">GURI</h1>
       </div>
-      <div class="col-lg-6 mx-auto">
-        <p class="lead">This White Paper is not intended for the purpose of making an offer or solicitation to sell stocks or securities.</p>
-        <p class="lead">Therefore, this White Paper should not be used or relied upon for any evidence in conncection with any contract or commitment.</p>
-        <p class="lead">It expressly disclaims any liablity for any kind of direct or consequential loss/damage, either directly or indirectly.</p>
+      <div class="col-12 col-lg-8 mx-auto">
+        <p class="lead mb-3">This White Paper is not intended for the purpose of making an offer or solicitation to sell stocks or securities.</p>
+        <p class="lead mb-3">Therefore, this White Paper should not be used or relied upon for any evidence in conncection with any contract or commitment.</p>
+        <p class="lead mb-3">It expressly disclaims any liablity for any kind of direct or consequential loss/damage, either directly or indirectly.</p>
         <p class="lead mb-4">caused by reliance on information contained in this White Paper, errors, onmissions or inaccuracies in such information, or actions taken therefrom.</p>
-        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mb-2">
-          <button type="button" class="btn btn-outline-primary btn-sm px-4" (click)="downloadWhitePaper('ko', true)">WhitePaperShort-KR</button>
-          <button type="button" class="btn btn-outline-primary btn-sm px-4" (click)="downloadWhitePaper('ko', false)">WhitePaper-KR</button>
+        <div class="d-grid gap-2 mb-3">
+          <button type="button" class="btn btn-outline-primary px-4" (click)="downloadWhitePaper('ko', true)">WhitePaperShort-KR</button>
+          <button type="button" class="btn btn-outline-primary px-4" (click)="downloadWhitePaper('ko', false)">WhitePaper-KR</button>
         </div>
-        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mb-2">
-          <button type="button" class="btn btn-outline-primary btn-sm px-4" (click)="downloadWhitePaper('en', true)">WhitePaperShort-EN</button>
-          <button type="button" class="btn btn-outline-primary btn-sm px-4" (click)="downloadWhitePaper('en', false)" disabled>WhitePaper-EN</button>
+        <div class="d-grid gap-2">
+          <button type="button" class="btn btn-outline-primary px-4" (click)="downloadWhitePaper('en', true)">WhitePaperShort-EN</button>
+          <button type="button" class="btn btn-outline-primary px-4" (click)="downloadWhitePaper('en', false)" disabled>WhitePaper-EN</button>
         </div>
       </div>
     </div>

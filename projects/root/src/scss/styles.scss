@@ -649,3 +649,213 @@ eth-menus {
 //     }
 //   }
 // }
+
+// 반응형 미디어 쿼리
+@media (max-width: 768px) {
+  body {
+    min-width: auto !important; // 모바일에서 가로 스크롤 방지
+  }
+
+  .eth-section1, .eth-section2, .eth-section3, .eth-section4, .eth-section5, .eth-section6 {
+    min-height: 100vh;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .display-4 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .display-6 {
+    font-size: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  // 섹션별 모바일 스타일
+  .eth-section1 {
+    .intro-guri-reverse {
+      display: none;
+    }
+
+    // 이미지를 포함하는 컬럼 숨기기
+    .col-12.col-md-6:last-child {
+      display: none;
+    }
+
+    .intro-description {
+      text-align: center;
+      padding: 2rem 1rem;
+
+      // 이미지가 없을 때 전체 너비 사용
+      width: 100%;
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+  }
+
+  .eth-section2 {
+    .eth-about-coin img {
+      max-height: 250px;
+      object-fit: contain;
+    }
+  }
+
+  .eth-section3 {
+    .eth-how-to-buy {
+      .row-border {
+        margin-bottom: 1rem;
+        padding: 0.75rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      img {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .eth-section4 {
+    .eth-double {
+      &:last-child {
+        display: none;
+      }
+
+      &:first-child {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+
+        flex: 0 0 100%;
+        max-width: 100%;
+
+        .row-border {
+          max-width: 500px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  // 섹션 높이 조정
+  .eth-section1, .eth-section4, .eth-section5 {
+    min-height: auto !important;
+    height: auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  .eth-section5 {
+    .eth-roadmap {
+      padding: 1rem;
+
+      h1 {
+        margin-bottom: 1.5rem !important;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .eth-section6 {
+    .eth-white-paper {
+      padding: 1rem;
+
+      .btn {
+        margin-bottom: 0.5rem;
+        width: 100%;
+      }
+    }
+  }
+
+  // 섹션 간 간격 조정을 위한 추가 스타일
+  #section4, #section5 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+// 태블릿 디바이스를 위한 중간 크기 스타일
+@media (min-width: 769px) and (max-width: 1024px) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+
+  .eth-section1, .eth-section2, .eth-section3, .eth-section4, .eth-section5, .eth-section6 {
+    padding: 2rem;
+  }
+}
+
+// 이미지 최적화 개선
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+// 접근성 개선
+.btn {
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+}
+
+// 버튼 그룹 모바일 최적화
+@media (max-width: 576px) {
+  .d-grid.gap-2 {
+    grid-template-columns: 1fr;
+
+    .btn {
+      margin: 0.25rem 0;
+    }
+  }
+}
+
+// 태블릿 크기에서는 이미지 표시
+@media (min-width: 769px) {
+  .eth-section1 {
+    .intro-guri-reverse,
+    .col-12.col-md-6:last-child {
+      display: block;
+    }
+
+    .intro-description {
+      width: 50%;
+      flex: 0 0 50%;
+    }
+  }
+
+  .eth-section4 {
+    .eth-double {
+      &:last-child {
+        display: block;
+      }
+
+      &:first-child {
+        width: 50%;
+        flex: 0 0 50%;
+      }
+    }
+  }
+}
