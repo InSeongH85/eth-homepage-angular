@@ -1,41 +1,61 @@
 <div class="container">
-  <main class="eth-main-container">
-    <!-- <h1 class="eth-page-title" tabIndex="0" [textContent]="title$ | async"></h1> -->
+  <main class="eth-main-container" role="main" aria-label="메인 콘텐츠">
     <router-outlet></router-outlet>
   </main>
-  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none" aria-hidden="true">
     <symbol id="reddit" viewBox="0 0 16 16">
+      <title>Reddit</title>
+      <desc>Reddit 소셜 미디어 아이콘</desc>
       <path d="M6.167 8a.831.831 0 0 0-.83.83c0 .459.372.84.83.831a.831.831 0 0 0 0-1.661zm1.843 3.647c.315 0 1.403-.038 1.976-.611a.232.232 0 0 0 0-.306.213.213 0 0 0-.306 0c-.353.363-1.126.487-1.67.487-.545 0-1.308-.124-1.671-.487a.213.213 0 0 0-.306 0 .213.213 0 0 0 0 .306c.564.563 1.652.61 1.977.61zm.992-2.807c0 .458.373.83.831.83.458 0 .83-.381.83-.83a.831.831 0 0 0-1.66 0z"/>
       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.828-1.165c-.315 0-.602.124-.812.325-.801-.573-1.9-.945-3.121-.993l.534-2.501 1.738.372a.83.83 0 1 0 .83-.869.83.83 0 0 0-.744.468l-1.938-.41a.203.203 0 0 0-.153.028.186.186 0 0 0-.086.134l-.592 2.788c-1.24.038-2.358.41-3.17.992-.21-.2-.496-.324-.81-.324a1.163 1.163 0 0 0-.478 2.224c-.02.115-.029.23-.029.353 0 1.795 2.091 3.256 4.669 3.256 2.577 0 4.668-1.451 4.668-3.256 0-.114-.01-.238-.029-.353.401-.181.688-.592.688-1.069 0-.65-.525-1.165-1.165-1.165z"/>
     </symbol>
     <symbol id="twitter" viewBox="0 0 16 16">
+      <title>Twitter</title>
+      <desc>Twitter 소셜 미디어 아이콘</desc>
       <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
     </symbol>
     <symbol id="navercafe" viewBox="0 0 210 210">
+      <title>네이버 카페</title>
+      <desc>네이버 카페 커뮤니티 아이콘</desc>
       <path d="M137 4 C138.1034375 4.350625 139.206875 4.70125 140.34375 5.0625 C167.5421571 14.56873937 188.67817839 34.59010284 201.25 60.3125 C211.61412561 83.81221656 214.25395683 112.45533889 206 137 C205.649375 138.1034375 205.29875 139.206875 204.9375 140.34375 C195.43126063 167.5421571 175.40989716 188.67817839 149.6875 201.25 C126.18778344 211.61412561 97.54466111 214.25395683 73 206 C71.8965625 205.649375 70.793125 205.29875 69.65625 204.9375 C42.4578429 195.43126063 21.32182161 175.40989716 8.75 149.6875 C-1.61412561 126.18778344 -4.25395683 97.54466111 4 73 C4.350625 71.8965625 4.70125 70.793125 5.0625 69.65625 C14.56873937 42.4578429 34.59010284 21.32182161 60.3125 8.75 C83.81221656 -1.61412561 112.45533889 -4.25395683 137 4" fill="currentColor"/>
       <path d="M65 65 C90 65 90 65 95.51953125 69.43359375 C97.27929688 72.31811523 97.27929688 72.31811523 98.8125 75.4375 C100.04683818 77.54245237 101.28252973 79.64661168 102.51953125 81.75 C103.38312256 83.3278125 103.38312256 83.3278125 104.26416016 84.9375 C106.85547852 89.50929993 109.90679774 93.69754333 113 97.9375 C115.475 101.4334375 115.475 101.4334375 118 105 C118.33 91.8 118.66 78.6 119 65 C127.58 65 136.16 65 145 65 C145 91.4 145 117.8 145 145 C136.75 145 128.5 145 120 145 C111.42303719 135.23760331 111.42303719 135.23760331 109.16796875 130.78125 C105.94485207 124.74752633 102.11202514 119.29668148 98.125 113.75 C96.10375 110.8625 94.0825 107.975 92 105 C91.67 118.2 91.34 131.4 91 145 C82.42 145 73.84 145 65 145 C65 118.6 65 92.2 65 65" fill="#fff"/>
     </symbol>
   </svg>
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" role="contentinfo">
     <div class="col-md-4 d-flex align-items-center">
       <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Guri, All rights reserved.</span>
     </div>
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    <nav class="nav col-md-4 justify-content-end list-unstyled d-flex" aria-label="소셜 미디어 링크">
       <li class="ms-3">
-        <a class="text-body-secondary" href="https://www.reddit.com/r/GuriToken" target="_blank" rel="noopener noreferrer">
-          <svg class="bi" width="24" height="24"><use xlink:href="#reddit"></use></svg>
+        <a class="text-body-secondary" href="https://www.reddit.com/r/GuriToken"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Reddit에서 Guri Token 보기">
+          <svg class="bi" width="24" height="24" aria-hidden="true" focusable="false">
+            <use xlink:href="#reddit"></use>
+          </svg>
         </a>
       </li>
       <li class="ms-3">
-        <a class="text-body-secondary" href="https://x.com/Albam_The_Guri" target="_blank" rel="noopener noreferrer">
-          <svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg>
+        <a class="text-body-secondary" href="https://x.com/Albam_The_Guri"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Twitter에서 Guri Token 팔로우하기">
+          <svg class="bi" width="24" height="24" aria-hidden="true" focusable="false">
+            <use xlink:href="#twitter"></use>
+          </svg>
         </a>
       </li>
       <li class="ms-3">
-        <a class="text-body-secondary" href="https://cafe.naver.com/albamraccoon" target="_blank" rel="noopener noreferrer">
-          <svg class="bi" width="24" height="24"><use xlink:href="#navercafe"></use></svg>
+        <a class="text-body-secondary" href="https://cafe.naver.com/albamraccoon"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="네이버 카페에서 Guri Token 커뮤니티 방문하기">
+          <svg class="bi" width="24" height="24" aria-hidden="true" focusable="false">
+            <use xlink:href="#navercafe"></use>
+          </svg>
         </a>
       </li>
-    </ul>
+    </nav>
   </footer>
 </div>
