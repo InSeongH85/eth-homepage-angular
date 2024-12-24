@@ -1,0 +1,37 @@
+# www.robotstxt.org/
+
+# Allow crawling of all content
+User-agent: *
+Allow: /
+
+# Disallow specific paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.ts$
+
+# Crawl-delay
+Crawl-delay: 100
+
+# Social media bots
+User-agent: Twitterbot
+Allow: /assets/images/
+
+User-agent: facebookexternalhit
+Allow: /assets/images/
+
+# Additional search engines
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /assets/images/
+
+# Block specific bots
+User-agent: *bot
+Disallow: /wp-admin/
+Disallow: /wp-includes/
