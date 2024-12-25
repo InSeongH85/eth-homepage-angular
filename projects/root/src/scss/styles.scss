@@ -171,14 +171,22 @@ eth-header {
 // How to buy
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 .row-border {
-  border: 1px solid #000; /* You can customize the border style, width, and color */
-  padding: 10px; /* Optional: Add some padding for better appearance */
-  margin-bottom: 10px; /* Optional: Add some margin to separate the rows */
+  border: 1px solid #000;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
 }
 
 .row-border img {
-  width: 80%; /* Adjust the width as needed */
-  height: auto; /* Maintain the aspect ratio */
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .spacing-bottom {
@@ -708,8 +716,9 @@ eth-menus {
   .eth-section3 {
     .eth-how-to-buy {
       .row-border {
-        margin-bottom: 1rem;
-        padding: 0.75rem;
+        border-radius: 12px;
+        padding: 12px;
+        margin-bottom: 15px;
       }
 
       h2 {
