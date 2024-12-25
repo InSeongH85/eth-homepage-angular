@@ -748,8 +748,8 @@ eth-menus {
 
   // 섹션 높이 조정
   .eth-section1, .eth-section4, .eth-section5 {
-    min-height: auto !important;
-    height: auto !important;
+    min-height: 0;
+    height: auto;
     margin-bottom: 0 !important;
   }
 
