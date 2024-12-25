@@ -183,6 +183,25 @@ eth-header {
   }
 }
 
+// tokenomics 섹션의 row-border 특별 스타일
+.eth-section4 {
+  .eth-double {
+    .row-border {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;  // 세로 중앙 정렬만 유지
+      min-height: 150px;        // 최소 높이 설정
+
+      p {
+        margin: 0;             // 기본 마진 제거
+        &.lead {
+          margin: 0.5rem 0;    // 위아래 간격 추가
+        }
+      }
+    }
+  }
+}
+
 .row-border img {
   width: 80%;
   height: auto;
