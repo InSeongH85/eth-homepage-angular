@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, signal, ViewEncapsulation, WritableSignal } from '@angular/core';
-import { Router } from '@angular/router';
-import { MessageService } from '../../../../messages/src/public-api';
 import { WindowInfo, WindowService } from '../../../../common/src/public-api';
+import { LOCALE } from './intro.model';
 
 const fragments = ['section1', 'section2', 'section3', 'section4', 'section5', 'section6'];
 
@@ -24,12 +23,7 @@ export class IntroPage implements OnInit {
 
   // private windowInfoSubscription: Subscription;
 
-  constructor(
-    private router: Router,
-    private cdr: ChangeDetectorRef,
-    private messageService: MessageService,
-    private windowService: WindowService,
-  ) {
+  constructor( private cdr: ChangeDetectorRef, private windowService: WindowService ) {
     // 스크롤이벤트발생시, 화면에 보이는 fragment section 찾기
     window.addEventListener('scroll', () => this.checkIfFragmentsVisible());
   }
@@ -87,15 +81,18 @@ export class IntroPage implements OnInit {
    * @param lang
    * @param isShort
    */
-  downloadWhitePaper(lang: string, isShort: boolean) {
+  downloadWhitePaper(locale: LOCALE, isShort: boolean) {
     let fileName = '';
     const filePathPrefx = '../../../assets/white-paper/';
-    switch (lang) {
+    switch (locale) {
       case 'en':
         fileName = isShort ? 'WhitePaper-Short-EN.docx' : 'WhitePaper-EN.pptx';
         break;
       case 'ko':
         fileName = isShort ? 'WhitePaper-Short-KR.docx' : 'WhitePaper-KR.pptx';
+        break;
+      default:
+        fileName = isShort ? 'WhitePaper-Short-EN.docx' : 'WhitePaper-EN.pptx';
         break;
     }
     const fileUrl = filePathPrefx.concat(fileName);
