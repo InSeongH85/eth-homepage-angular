@@ -85,14 +85,11 @@ export class IntroPage implements OnInit {
     let fileName = '';
     const filePathPrefx = '../../../assets/white-paper/';
     switch (locale) {
-      case 'en':
-        fileName = isShort ? 'WhitePaper-Short-EN.docx' : 'WhitePaper-EN.pptx';
-        break;
       case 'ko':
-        fileName = isShort ? 'WhitePaper-Short-KR.docx' : 'WhitePaper-KR.pptx';
+        fileName = isShort ? 'GURI_WhitePaper_Summary_v1.0-KR.pdf' : 'GURI_WhitePaper_v1.0-KR.pdf';
         break;
       default:
-        fileName = isShort ? 'WhitePaper-Short-EN.docx' : 'WhitePaper-EN.pptx';
+        fileName = isShort ? 'GURI_WhitePaper_Summary_v1.0-EN.pdf' : 'GURI_WhitePaper_v1.0-EN.pdf';
         break;
     }
     const fileUrl = filePathPrefx.concat(fileName);
